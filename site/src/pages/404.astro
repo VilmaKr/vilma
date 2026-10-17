@@ -1,0 +1,19 @@
+---
+import { useTranslations, type Language } from '../i18n';
+// This does not work. Don't know why. Maybe get url from Astro.url.pathname instead of Astro.currentLocale
+const lang = Astro.currentLocale as Language;
+
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
+  <head>
+    <title>{t("404.title")}</title>
+    <meta http-equiv="refresh" content={`0;url=/${lang || "en"}/`} />
+  </head>
+  <body>
+    <h1>{t("404.title")}</h1>
+    <p>{t("404.description")}</p>
+    <a href={`/${lang || "en"}/`}>{t("nav.home")}</a>
+  </body>
+</html>

@@ -1,9 +1,8 @@
 ---
 import "../styles/global.css";
-import '@fontsource/inter';
-import LanguagePicker from '../components/LanguagePicker.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import LanguagePicker from "../components/LanguagePicker.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -30,7 +29,10 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <meta name="keywords" content="macedonian teacher, professeur macédonien, македонски наставник" />
+    <meta
+      name="keywords"
+      content="macedonian teacher, professeur macédonien, македонски наставник"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -52,14 +54,22 @@ const { title, description } = Astro.props;
     <link rel="canonical" href={Astro.url.href} />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXBSMK5VZM"></script>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="216d829b-93a5-4502-956b-e36e9014ad0d" type="text/javascript" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXBSMK5VZM"
+    ></script>
+    <script
+      id="Cookiebot"
+      src="https://consent.cookiebot.com/uc.js"
+      data-cbid="216d829b-93a5-4502-956b-e36e9014ad0d"
+      type="text/javascript"
+      async></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-LXBSMK5VZM');
+      gtag("config", "G-LXBSMK5VZM");
     </script>
   </head>
   <body class="min-h-screen bg-gray-50">
@@ -77,16 +87,3 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --mk-red: #D20000;
-    --mk-yellow: #FFE600;
-  }
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-  body {
-    margin: 0;
-  }
-</style>

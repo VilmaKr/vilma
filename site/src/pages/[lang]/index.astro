@@ -1,28 +1,28 @@
 ---
 export function getStaticPaths() {
   return [
-    { params: { lang: "en" }},
-    { params: { lang: "fr" }},
-    { params: { lang: "mk" }},
+    { params: { lang: "en" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "mk" } },
   ];
 }
 
-const { lang } = Astro.params as { lang: Language };
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import TeachingPhilosophy from "../../components/TeachingPhilosophy.astro";
+import BookMeeting from "../../components/BookMeeting.astro";
+import { useTranslations, type Language } from "../../i18n";
 
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero.astro';
-import TeachingPhilosophy from '../../components/TeachingPhilosophy.astro';
-import BookMeeting from '../../components/BookMeeting.astro';
-import { useTranslations, type Language } from '../../i18n';
-
+const lang = Astro.currentLocale as Language;
 const t = useTranslations(lang);
 
-const title = t('home.title');
-const description = t('home.description');
+const title = t("home.title");
+const description = t("home.description");
 ---
 
 <Layout title={title} description={description}>
   <Hero />
   <TeachingPhilosophy />
+  <!-- <WhatMyStudentsSay /> -->
   <BookMeeting />
 </Layout>

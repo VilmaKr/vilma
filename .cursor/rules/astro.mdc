@@ -1,6 +1,6 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: true
 ---
 # Rule Name: astro.mdc
@@ -64,7 +64,7 @@ Performance Optimization
 Data Fetching
 - Use `Astro.props` for passing data to components.
 - Implement `getStaticPaths()` for fetching data at build time.
-- Use Vite's `import.meta.glob()` for importing multiple local  glob patterns. [Learn More](https://docs.astro.build/en/guides/imports/#importmetaglob)
+- Use Vite's `import.meta.glob()` for importing multiple local  glob patterns. [Learn More](mdc:https:/docs.astro.build/en/guides/imports/#importmetaglob)
 - Implement proper error handling for data fetching operations.
 
 SEO and Meta Tags
@@ -82,9 +82,6 @@ Build and Deployment
 - Implement proper environment variable handling for different environments. [Learn More](mdc:https:/docs.astro.build/en/guides/environment-variables)
 - Use static hosting platforms compatible with Astro (Netlify, Vercel, etc.). [Learn More](mdc:https:/docs.astro.build/en/guides/deploy)
 - Implement proper CI/CD pipelines for automated builds and deployments.
-
-Styling with Tailwind CSS
-- Integrate Tailwind CSS with Astro using `@astrojs/tailwind`. [Learn More](mdc:https:/docs.astro.build/en/guides/integrations-guide/tailwind)
 
 Tailwind CSS Best Practices
 - Use Tailwind utility classes extensively in your Astro components.

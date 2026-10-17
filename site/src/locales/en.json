@@ -1,4 +1,8 @@
 {
+  "404": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for does not exist."
+  },
   "nav": {
     "home": "Home",
     "contact": "Contact"
@@ -10,7 +14,7 @@
   "hero": {
     "title": "Learn Macedonian with Vilma",
     "subtitle": "Your friendly, experienced tutor for mastering practical conversation, connecting with your heritage, and understanding Macedonian culture.",
-    "cta": "Book a lesson"
+    "cta": "Book a free lesson with me"
   },
   "booking": {
     "title": "Ready to Start Learning?",

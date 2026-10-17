@@ -5,9 +5,6 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   site: "https://macedonianwithvilma.com",
   integrations: [partytown()],
-  redirects: {
-    "/": "/en",
-  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -21,6 +18,7 @@ export default defineConfig({
     locales: ["en", "fr", "mk"],
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
 });
