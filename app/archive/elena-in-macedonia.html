@@ -1,0 +1,1016 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Elena in Macedonia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Layout: one centred column (max 760px). Home = six "cities", each with three lesson stops; play = one question card at a time. */
+:root{
+  --bg:#EDF2F5; --surface:#FFFFFF; --surface-2:#F4F7F9; --ink:#13222E; --muted:#566775; --line:#D3DDE4;
+  --lake:#1C5D86; --lake-soft:#DCEAF3; --on-lake:#FFFFFF;
+  --sun:#E7A600; --sun-soft:#FFF3D1;
+  --good:#1F7A4D; --good-soft:#E2F2E9; --bad:#B3362B; --bad-soft:#FBE7E4;
+  --wood:#9A6B43; --wood-dark:#6E4A2C; --box:#C9A06A;
+  --font-display:"Unbounded","Golos Text",system-ui,sans-serif;
+  --font-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1922; --surface:#14232E; --surface-2:#1A2C39; --ink:#E6EEF3; --muted:#9BB0BF; --line:#2A3F4E;
+    --lake:#6FB3DD; --lake-soft:#183448; --on-lake:#08161F;
+    --sun:#F3C23F; --sun-soft:#3A2F12;
+    --good:#5CC48D; --good-soft:#123323; --bad:#F2806F; --bad-soft:#3E1D19;
+    --wood:#B98A5E; --wood-dark:#8A6340; --box:#B48E5C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1922; --surface:#14232E; --surface-2:#1A2C39; --ink:#E6EEF3; --muted:#9BB0BF; --line:#2A3F4E;
+  --lake:#6FB3DD; --lake-soft:#183448; --on-lake:#08161F;
+  --sun:#F3C23F; --sun-soft:#3A2F12;
+  --good:#5CC48D; --good-soft:#123323; --bad:#F2806F; --bad-soft:#3E1D19;
+  --wood:#B98A5E; --wood-dark:#8A6340; --box:#B48E5C;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 64px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.en{color:var(--muted)}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0}
+
+/* Suns (the scoring mark, after the sun on the Macedonian flag) */
+.sun g,.sun circle{fill:var(--line)}
+.sun.on g,.sun.on circle{fill:var(--sun)}
+.suns{display:inline-flex;gap:2px;align-items:center}
+
+/* Home */
+.hero{position:relative;overflow:hidden;padding-block:12px 28px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.hero-sun{position:absolute;right:-56px;top:-60px;width:220px;height:220px;opacity:.9;pointer-events:none}
+.hero-sun g,.hero-sun circle{fill:var(--sun)}
+.sun-wrap{position:absolute;inset:0;pointer-events:none}
+.hero > *:not(.sun-wrap){position:relative}
+@media (max-width:520px){.hero-sun{width:150px;height:150px;right:-40px;top:-44px}}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(1.7rem,6.2vw,2.7rem);line-height:1.08;margin:.4rem 0 0;letter-spacing:-.01em;text-wrap:balance;max-width:14ch}
+.hero-en{font-family:var(--font-display);font-weight:500;color:var(--lake);margin:.35rem 0 0;font-size:clamp(1rem,3.2vw,1.2rem)}
+.lede{max-width:56ch;margin:1rem 0 0}
+.lede .en{display:block}
+.hero-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.tally{display:inline-flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+.tally b{font-size:1.05rem}
+.chapter{margin-top:28px}
+.ch-head{display:grid;gap:2px;margin-bottom:12px}
+.ch-head h2{font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin:0}
+.ch-head p{margin:0}
+.stops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.stops{grid-template-columns:1fr}}
+.stop{display:grid;gap:4px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s, transform .15s}
+.stop:hover{border-color:var(--lake);transform:translateY(-1px)}
+.stop-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.stop-num{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.stop-mk{font-weight:700;font-size:1.08rem;line-height:1.25}
+.stop-en{color:var(--muted);font-size:.92rem;line-height:1.3}
+.stop-meta{color:var(--muted);font-size:.8rem;margin-top:4px}
+.reset{margin-top:36px;display:flex;justify-content:center}
+
+/* Buttons */
+.btn{font-weight:600;border-radius:12px;padding:12px 18px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer}
+.btn:hover{border-color:var(--lake)}
+.btn.primary{background:var(--lake);border-color:var(--lake);color:var(--on-lake)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;border-color:transparent;padding:8px 10px;color:var(--lake)}
+.btn.small{font-size:.85rem;padding:8px 12px;color:var(--muted)}
+.link{background:none;border:0;color:var(--lake);font-weight:600;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;justify-self:start}
+
+/* Play */
+.playbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.playbar .title{flex:1;min-width:0;font-weight:700;line-height:1.2}
+.playbar .title span{display:block;font-weight:400;font-size:.85rem;color:var(--muted)}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600}
+.track{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fill{height:100%;background:var(--lake);border-radius:99px;transition:width .3s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,4vw,24px);display:grid;gap:16px}
+.kind{justify-self:start;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--lake);background:var(--lake-soft);border-radius:99px;padding:4px 10px}
+.prompt{display:grid;gap:2px}
+.q-mk{font-size:clamp(1.15rem,3.6vw,1.4rem);font-weight:600;line-height:1.35;margin:0;text-wrap:balance}
+.q-en{color:var(--muted);margin:0}
+.visual{display:flex;justify-content:center}
+.pic{font-size:3.4rem;line-height:1}
+.swatch{width:140px;height:84px;border-radius:14px;border:1px solid var(--line)}
+svg.scene{width:100%;max-width:340px;height:auto}
+.scene .floor{stroke:var(--line);stroke-width:2}
+.scene .table{fill:var(--wood)}
+.scene .ball{fill:var(--sun);stroke:var(--ink);stroke-width:1.5}
+.scene .box{fill:var(--box);stroke:var(--ink);stroke-width:1.5}
+.scene .box-back{fill:var(--wood-dark)}
+.scene .box-line{stroke:var(--ink);stroke-width:1;opacity:.35}
+.scene .lamp{fill:var(--lake)}
+.scene .cord{stroke:var(--ink);stroke-width:2}
+.scene .bulb{fill:var(--sun)}
+svg.clock{width:150px;height:150px}
+.clock .face{fill:var(--surface-2);stroke:var(--ink);stroke-width:2.5}
+.clock .ticks line{stroke:var(--muted);stroke-width:2.2;stroke-linecap:round}
+.clock .hh{stroke:var(--ink);stroke-width:5;stroke-linecap:round}
+.clock .mh{stroke:var(--lake);stroke-width:3;stroke-linecap:round}
+.clock .pin{fill:var(--ink)}
+svg.flag{width:200px;max-width:100%;height:auto;border-radius:4px;box-shadow:0 0 0 1px var(--line)}
+
+.story{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px}
+.story-pic{font-size:1.6rem;letter-spacing:.25em}
+.story-mk{margin:0;font-size:1.04rem;max-width:62ch}
+.story-en{margin:0;color:var(--muted);max-width:62ch}
+
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opts.long{grid-template-columns:1fr}
+@media (max-width:520px){.opts{grid-template-columns:1fr}}
+.opt{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;font-size:1.05rem;cursor:pointer;transition:border-color .15s, background .15s}
+.opt:hover:not(:disabled){border-color:var(--lake);background:var(--lake-soft)}
+.opt:disabled{cursor:default}
+.is-right{background:var(--good-soft)!important;border-color:var(--good)!important}
+.is-wrong{background:var(--bad-soft)!important;border-color:var(--bad)!important}
+
+.match{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mcol{display:grid;gap:8px;align-content:start}
+.mbtn{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;font-size:1rem;cursor:pointer;text-align:center;min-height:48px;overflow-wrap:anywhere}
+.mbtn.pic{font-size:1.8rem;padding:6px}
+.mbtn.sel{border-color:var(--lake);background:var(--lake-soft)}
+.mbtn.ok{border-color:var(--good);background:var(--good-soft);cursor:default}
+.mbtn.no{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+.note{font-size:.85rem;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+
+.line{min-height:58px;border:1.5px dashed var(--line);border-radius:12px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.line .ph{color:var(--muted);font-size:.9rem;padding-inline:6px}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.tile{padding:9px 13px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface-2);font-size:1.05rem;cursor:pointer}
+.line .tile{background:var(--lake-soft);border-color:var(--lake)}
+.line.good .tile{background:var(--good-soft);border-color:var(--good)}
+.line.bad .tile{background:var(--bad-soft);border-color:var(--bad)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+.now{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;min-height:52px}
+.chip-big{font-size:1.35rem;font-weight:600;padding:8px 18px;border-radius:999px;background:var(--sun-soft);border:1.5px solid var(--sun)}
+.buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.bucket{display:grid;gap:8px;align-content:start;text-align:left;background:var(--surface-2);border:1.5px solid var(--line);border-radius:14px;padding:12px;min-height:130px;cursor:pointer}
+.bucket:hover:not(:disabled){border-color:var(--lake)}
+.bucket:disabled{cursor:default}
+.bucket .bh{font-weight:700;line-height:1.2}
+.bucket .bh span{display:block;font-weight:400;font-size:.85rem;color:var(--muted)}
+.bucket.flash-ok{border-color:var(--good);background:var(--good-soft)}
+.bucket.flash-no{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+.drops{display:flex;flex-wrap:wrap;gap:6px}
+.drop{font-size:.9rem;padding:3px 9px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+.drop.wrong{background:var(--bad-soft);border-color:var(--bad)}
+
+.tf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+
+.feedback{border-radius:14px;padding:14px 16px;display:grid;gap:6px;border:1.5px solid}
+.feedback.good{background:var(--good-soft);border-color:var(--good)}
+.feedback.bad{background:var(--bad-soft);border-color:var(--bad)}
+.fb-head{font-weight:700;margin:0}
+.feedback.good .fb-head{color:var(--good)}
+.feedback.bad .fb-head{color:var(--bad)}
+.feedback p{margin:0}
+.feedback .btn{justify-self:start;margin-top:6px}
+
+.result{text-align:center;display:grid;gap:10px;justify-items:center;padding-block:12px}
+.result h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,5vw,1.9rem);margin:0;text-wrap:balance}
+.big-score{font-family:var(--font-display);font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.missed{display:grid;gap:8px;margin-top:18px}
+.missed h3{margin:0;font-size:1rem}
+.miss{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.miss p{margin:0}
+.miss .ans{font-weight:600;color:var(--good)}
+.end-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+
+/* Language switch */
+.hero-controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:18px}
+.hero-controls .levels{margin-top:0}
+.langs{display:inline-flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
+.langs-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-inline:8px 4px}
+.lang{border:0;background:transparent;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.85rem;cursor:pointer;color:var(--muted)}
+.lang:hover{background:var(--surface-2);color:var(--ink)}
+.lang.on{background:var(--sun);color:#13222E}
+
+/* Levels */
+.levels{display:flex;flex-wrap:wrap;gap:4px;margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px;width:fit-content;max-width:100%}
+.lvl{display:grid;text-align:left;border:0;background:transparent;border-radius:10px;padding:8px 14px;cursor:pointer;line-height:1.25}
+.lvl:hover{background:var(--surface-2)}
+.lvl.on{background:var(--lake);color:var(--on-lake)}
+.lvl-mk{font-weight:700}
+.lvl-en{font-size:.78rem;opacity:.85}
+.soon{margin-top:20px}
+.soon-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.soon-list li{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:2px}
+.story-mk,.story-en{white-space:pre-line}
+.street{display:flex;gap:8px;align-items:flex-end;padding-inline:8px;border-bottom:4px solid var(--line);max-width:100%}
+.bldg{display:grid;justify-items:center;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0;padding:10px 10px 8px;min-width:0;flex:1 1 0}
+.bldg-ic{font-size:2rem;line-height:1}
+.bldg-lb{font-size:.85rem;color:var(--muted)}
+
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap"><main id="view" aria-live="polite"></main></div>
+
+<script>
+/* ---------- Content ---------- */
+const STORIES = {
+  marko: { pic: "🏖️", mk: "Здраво! Јас сум Марко. Јас сум од Скопје, но сега сум во Охрид. Мојата сестра Ана е со мене. Ние сме на одмор и сме многу среќни!",
+           en: "Hi! I'm Marko. I'm from Skopje, but now I'm in Ohrid. My sister Ana is with me. We're on holiday and we're very happy!" },
+  bag:   { pic: "🎒 📖 🍾 🎧 🔑", mk: "Што има во ранецот на Елена? Таа има книга, шише вода, слушалки и клучеви. Таа нема наочари и нема пари!",
+           en: "What's in Elena's backpack? She has a book, a bottle of water, headphones and keys. She has no glasses and no money!" },
+  ana:   { pic: "🌅 🚌 🥗 🐕 📺", mk: "Ана станува во шест часот. Пие чај со мед и јаде леб со ајвар. Во осум часот оди на работа со автобус. За ручек јаде салата со колегите. Попладне шета со своето куче во паркот. Навечер готви и гледа серија. Си легнува во десет часот.",
+           en: "Ana gets up at six o'clock. She drinks tea with honey and eats bread with ajvar. At eight she goes to work by bus. For lunch she eats a salad with her colleagues. In the afternoon she walks her dog in the park. In the evening she cooks and watches a series. She goes to bed at ten." }
+};
+
+const CHAPTERS_1 = [
+  { city: "Скопје",   mk: "Елена пристигнува во главниот град.",        en: "Elena arrives in the capital." },
+  { city: "Охрид",    mk: "Викенд на езерото.",                            en: "A weekend by the lake." },
+  { city: "Битола",   mk: "Кафе на Широк сокак со нови пријатели.",        en: "Coffee on Širok Sokak with new friends." },
+  { city: "Струмица", mk: "Пазар полн со бои и вкусна храна.",             en: "A market full of colour and good food." },
+  { city: "Крушево",  mk: "Пат во планините и ручек кај баба.",            en: "A trip to the mountains and lunch at grandma's." },
+  { city: "Штип",     mk: "Голема семејна вечера.",                        en: "A big family dinner." }
+];
+
+/* In every "mc" question the first option is the correct one; options are shuffled on screen. */
+const STOPS_1 = [
+ { ch:0, mk:"Азбука", en:"Alphabet", qs:[
+  {t:"mc", q:"Колку букви има македонската азбука?", en:"How many letters does the Macedonian alphabet have?", o:["31","26","30","33"], why:"5 vowels (а, е, и, о, у) + 26 consonants = 31."},
+  {t:"mc", q:"Која буква НЕ е самогласка?", en:"Which letter is NOT a vowel?", o:["ј","а","у","о"], why:"ј is a consonant. It sounds like y in ‘yes’."},
+  {t:"match", q:"Поврзи го зборот со сликата.", en:"Match each word to its picture.", p:[["жаба","🐸"],["ѕвезда","⭐"],["око","👁️"],["лук","🧄"],["чај","🍵"]]},
+  {t:"mc", q:"Кој збор нема ниту една самогласка?", en:"Which word has no vowel at all?", o:["врв","вода","сон","маса"], why:"врв means ‘peak’. In Macedonian р can carry a syllable: врв, прст, крв."},
+  {t:"mc", q:"Која буква звучи како j во англискиот збор „jungle“?", en:"Which letter sounds like the j in ‘jungle’?", o:["џ","ј","ж","ѕ"], why:"џ = j in ‘jungle’. Careful: ј sounds like y in ‘yes’."},
+  {t:"mc", q:"Која буква звучи како ny во „canyon“?", en:"Which letter sounds like ny in ‘canyon’?", o:["њ","н","љ","ј"], why:"њ is a soft n, like Spanish ñ. Its partner љ is a soft l."},
+  {t:"mc", q:"Која буква е меко к, како cu во „cute“?", en:"Which letter is the soft k, like cu in ‘cute’?", o:["ќ","к","г","ѓ"], why:"ќ is a soft k (ќерка = daughter). ѓ is its soft g partner."},
+  {t:"mc", q:"Во кој збор има буква љ?", en:"Which word contains the letter љ?", o:["љубопитен","лубеница","њива","јаболко"], why:"љубопитен means ‘curious’. лубеница (watermelon) has a plain л."}
+ ]},
+ { ch:0, mk:"Поздрави", en:"Greetings", qs:[
+  {t:"mc", q:"Часот е 8 наутро. Елена го гледа соседот. Што вели?", en:"It's 8 a.m. Elena sees her neighbour. What does she say?", o:["Добро утро!","Добра ноќ!","Добра вечер!","Добредојдовте!"], why:"Добро утро = Good morning."},
+  {t:"mc", q:"Елена излегува од пекарата. Што ѝ вели на продавачката?", en:"Elena is leaving the bakery. What does she say to the shop assistant?", o:["Пријатно!","Добредојде!","Добар ден!","Наздравје!"], why:"Пријатно is the polite goodbye when you leave a place."},
+  {t:"mc", q:"Ти си на часот. Како го прашуваш новиот професор за неговото име?", en:"You're in class. How do you ask the new teacher his name?", o:["Како се викате?","Како се викаш?","Колку години имаш?","Од кој град си?"], why:"With a teacher, use the formal form: Како се викате?"},
+  {t:"mc", pic:"🤧", q:"Марко кива. Што му велиш?", en:"Marko sneezes. What do you say to him?", o:["Наздравје!","Фала!","Чао!","Добро утро!"], why:"Наздравје means ‘bless you’, and also ‘cheers’ when you raise a glass."},
+  {t:"match", q:"Поврзи го поздравот со преводот.", en:"Match each greeting to its translation.", p:[["Добар ден!","Good afternoon!"],["Добра ноќ!","Good night!"],["Се гледаме!","See you!"],["Благодарам!","Thank you!"],["Добредојде!","Welcome!"]]},
+  {t:"order", en:"Good evening, my name is Marko.", w:["Добра","вечер,","моето","име","е","Марко."]},
+  {t:"mc", q:"Баба Ружа прашува: „Како си?“ Ти си многу добро. Што одговараш?", en:"Grandma Ruža asks: ‘How are you?’ You're very well. What do you answer?", o:["Добро сум, фала! А ти?","Не сум добро.","Се викам Ружа.","Добра ноќ!"], why:"Добро сум, фала! А ти? = I'm fine, thanks! And you?"}
+ ]},
+ { ch:0, mk:"Чувства и здравје", en:"Feelings & health", qs:[
+  {t:"mc", pic:"😴", q:"Елена спиела само три часа. Таа е…", en:"Elena slept only three hours. She is…", o:["изморена","изморен","гладна","среќна"], why:"изморена = tired (a woman). A man says изморен."},
+  {t:"mc", pic:"🤕", q:"Што кажува Марко?", en:"What is Marko saying?", o:["Ме боли главата.","Ме боли стомакот.","Гладен сум.","Добро сум."], why:"Ме боли главата = My head hurts."},
+  {t:"mc", pic:"🍕", q:"Марко сака пица, бурек и сарма. Веднаш! Тој е…", en:"Marko wants pizza, burek and sarma. Right now! He is…", o:["гладен","гладна","изморен","болен"], why:"гладен = hungry (a man). A woman says гладна."},
+  {t:"mc", q:"Како вели жена „I am tired“?", en:"How does a woman say ‘I am tired’?", o:["Јас сум изморена.","Јас сум изморен.","Јас си изморена.","Јас е изморена."], why:"јас + сум, and the feminine ending -а."},
+  {t:"mc", pic:"🎶", q:"Ти си на концерт и музиката е одлична. Ти си…", en:"You're at a concert and the music is great. You are…", o:["среќна","болна","изморена","гладна"], why:"среќна = happy (a woman); a man says среќен."},
+  {t:"mc", pic:"🤢", q:"Елена јадела премногу баклава. Што вели?", en:"Elena ate too much baklava. What does she say?", o:["Ме боли стомакот.","Ме боли главата.","Јас сум среќна.","Добра вечер!"], why:"Ме боли стомакот = My stomach hurts."},
+  {t:"order", en:"Today I am hungry and tired. (a woman)", w:["Денес","сум","гладна","и","изморена."]}
+ ]},
+ { ch:1, mk:"Денови и месеци", en:"Days & months", qs:[
+  {t:"mc", q:"Денес е четврток. Утре е…", en:"Today is Thursday. Tomorrow is…", o:["петок","среда","сабота","вторник"], why:"четврток → петок (Thursday → Friday)."},
+  {t:"mc", q:"Денес е недела. Утре ќе биде…", en:"Today is Sunday. Tomorrow will be…", o:["понеделник","сабота","вторник","викенд"], why:"After the weekend comes понеделник (Monday)."},
+  {t:"order", q:"Подреди ги деновите.", en:"Put the days in order, starting with Monday.", w:["понеделник","вторник","среда","четврток","петок"]},
+  {t:"match", q:"Поврзи го денот со преводот.", en:"Match each day to its translation.", p:[["среда","Wednesday"],["четврток","Thursday"],["сабота","Saturday"],["недела","Sunday"],["вторник","Tuesday"]]},
+  {t:"mc", q:"Кој месец доаѓа после март?", en:"Which month comes after March?", o:["април","мај","февруари","јуни"], why:"март → април (March → April)."},
+  {t:"mc", pic:"🎄", q:"Во Македонија Божиќ се слави на 7 …", en:"In Macedonia, Christmas is celebrated on 7 …", o:["јануари","декември","февруари","ноември"], why:"The Macedonian Orthodox Church follows the old calendar, so Christmas is on 7 January."},
+  {t:"sort", q:"Зима или лето?", en:"Winter or summer? Sort the months.", b:["зима / winter","лето / summer"], i:[["декември",0],["јули",1],["јануари",0],["август",1],["февруари",0],["јуни",1]]},
+  {t:"mc", q:"Елена работи од понеделник до петок. Кога е слободна?", en:"Elena works Monday to Friday. When is she free?", o:["во сабота и недела","во среда и четврток","во понеделник","секој ден"], why:"сабота и недела = the weekend (викенд)."}
+ ]},
+ { ch:1, mk:"Секојдневни зборови", en:"Everyday words", qs:[
+  {t:"match", q:"Што има на масата?", en:"What's on the table? Match the pictures.", p:[["ранец","🎒"],["наочари","👓"],["слушалки","🎧"],["капа","🧢"],["книга","📖"],["шише","🍾"]]},
+  {t:"mc", q:"Кој збор не одговара?", en:"Odd one out: which word doesn't belong?", o:["наочари","град","село","центар"], why:"град, село and центар are places. наочари are glasses."},
+  {t:"mc", q:"Елена не гледа добро без …", en:"Elena can't see well without her …", o:["наочари","слушалки","капа","шише"], why:"наочари = glasses."},
+  {t:"mc", q:"Слушам музика со …", en:"I listen to music with my …", o:["слушалки","наочари","ранец","книга"], why:"слушалки = headphones."},
+  {t:"mc", q:"Што значи „наздравје“?", en:"What does ‘наздравје’ mean?", o:["Bless you! / Cheers!","Good night!","Thank you!","Welcome!"], why:"You say it after a sneeze, and when you clink glasses."},
+  {t:"sort", q:"Место или предмет?", en:"A place or an object?", b:["место / place","предмет / object"], i:[["град",0],["ташна",1],["село",0],["шише",1],["школо",0],["капа",1],["центар",0],["книга",1]]},
+  {t:"mc", pic:"⛰️", q:"„Врв“ е највисокиот дел на…", en:"A ‘врв’ is the highest part of a…", o:["mountain","city","book","bottle"], why:"врв = peak. The cross on Vodno sits on a врв above Skopje."},
+  {t:"mc", q:"Утре е празник, нема работа! Утре е…", en:"Tomorrow is a holiday, no work! Tomorrow is a…", o:["слободен ден","школо","ранец","врв"], why:"слободен ден = day off."}
+ ]},
+ { ch:1, mk:"Броеви и години", en:"Numbers & age", qs:[
+  {t:"mc", q:"17 = ?", en:"How do you say 17?", o:["седумнаесет","седумдесет","седум","дваесет и седум"], why:"-наесет makes 11–19: седум + наесет."},
+  {t:"mc", q:"дваесет + дваесет и пет = ?", en:"20 + 25 = ?", o:["четириесет и пет","педесет и пет","триесет и пет","четириесет"], why:"45 = четириесет и пет."},
+  {t:"mc", q:"сто − десет = ?", en:"100 − 10 = ?", o:["деведесет","осумдесет","деветнаесет","сто и десет"], why:"90 = деведесет."},
+  {t:"mc", q:"Баба Ружа има седумдесет и осум години. Колку е тоа?", en:"Grandma Ruža is ‘седумдесет и осум’. Which number is it?", o:["78","87","68","18"], why:"седумдесет (70) и осум (8) = 78."},
+  {t:"mc", pic:"☕", q:"Кафето чини шеесет денари. Колку е тоа?", en:"The coffee costs ‘шеесет’ denars. How much is that?", o:["60","16","70","6"], why:"шеесет = 60."},
+  {t:"mc", pic:"🍌", q:"Една, еден или едно? „___ банана“", en:"Choose the right ‘one’: ___ banana", o:["една","еден","едно","едни"], why:"банана ends in -а, so it is feminine: една."},
+  {t:"mc", q:"Една, еден или едно? „___ село“", en:"Choose the right ‘one’: ___ village", o:["едно","еден","една","едни"], why:"село ends in -о, so it is neuter: едно."},
+  {t:"order", en:"My grandmother is 78 years old.", w:["Мојата","баба","има","седумдесет","и","осум","години."]},
+  {t:"mc", q:"Што значи „трети“?", en:"What does ‘трети’ mean?", o:["third","three","thirteen","thirty"], why:"први, втори, трети… = first, second, third…"}
+ ]},
+ { ch:2, mk:"Лични заменки", en:"Pronouns", qs:[
+  {t:"mc", q:"Елена пие кафе. → ___ пие кафе.", en:"Replace ‘Elena’ with a pronoun.", o:["Таа","Тој","Тоа","Тие"], why:"Elena is a woman: таа (she)."},
+  {t:"mc", q:"Марко и Ана играат тенис. → ___ играат тенис.", en:"Replace ‘Marko and Ana’.", o:["Тие","Ние","Вие","Тој"], why:"Two other people: тие (they)."},
+  {t:"mc", q:"Ти и јас одиме во кино. → ___ одиме во кино.", en:"Replace ‘you and I’.", o:["Ние","Вие","Тие","Ти"], why:"You + me = ние (we)."},
+  {t:"mc", q:"Детето спие. → ___ спие.", en:"Replace ‘the child’.", o:["Тоа","Тој","Таа","Тие"], why:"дете is neuter, so тоа (it)."},
+  {t:"mc", q:"Градот е голем. → ___ е голем.", en:"Replace ‘the city’. Careful!", o:["Тој","Тоа","Таа","Тие"], why:"град ends in a consonant, so it is masculine: тој. Things have gender too."},
+  {t:"mc", q:"Зборуваш со професорката. Ти или вие?", en:"You're talking to your teacher. Which ‘you’?", o:["Вие","Ти","Тие","Ние"], why:"вие = formal ‘you’ (and plural ‘you’)."},
+  {t:"match", q:"Поврзи ја заменката.", en:"Match each pronoun.", p:[["јас","I"],["ти","you (a friend)"],["тој","he"],["ние","we"],["тие","they"],["вие","you (formal)"]]}
+ ]},
+ { ch:2, mk:"Глаголот сум", en:"The verb ‘to be’", qs:[
+  {t:"mc", q:"Ние ___ во Охрид.", en:"We are in Ohrid.", o:["сме","сте","се","сум"], why:"ние сме."},
+  {t:"mc", q:"Елена ___ на час по македонски.", en:"Elena is at a Macedonian class.", o:["е","си","сум","се"], why:"тој / таа / тоа е."},
+  {t:"mc", q:"Вие ___ од Битола?", en:"Are you from Bitola? (formal)", o:["сте","сме","се","си"], why:"вие сте."},
+  {t:"mc", q:"Ти ___ гладна?", en:"Are you hungry? (to a friend)", o:["си","сум","е","сте"], why:"ти си."},
+  {t:"tf", s:"marko", q:"Марко е од Охрид.", en:"Marko is from Ohrid.", a:false, why:"Марко е од Скопје. He is only on holiday in Ohrid."},
+  {t:"tf", s:"marko", q:"Ана е сестра на Марко.", en:"Ana is Marko's sister.", a:true, why:"Мојата сестра Ана е со мене."},
+  {t:"tf", s:"marko", q:"Тие се на работа.", en:"They are at work.", a:false, why:"Ние сме на одмор: they are on holiday."},
+  {t:"order", en:"We are not at home.", w:["Ние","не","сме","дома."]},
+  {t:"mc", q:"Која реченица е точна?", en:"Which sentence is correct?", o:["Тие се браќа.","Тие сме браќа.","Тие сте браќа.","Тие е браќа."], why:"тие се."}
+ ]},
+ { ch:2, mk:"Има и нема", en:"To have, not to have", qs:[
+  {t:"mc", q:"Јас ___ две сестри.", en:"I have two sisters.", o:["имам","имаш","има","имаат"], why:"јас имам."},
+  {t:"mc", pic:"🐈 🐈 🐈", q:"Тие ___ три мачки.", en:"They have three cats.", o:["имаат","имаме","имате","има"], why:"тие имаат."},
+  {t:"mc", pic:"🖊️", q:"Дали ___ пенкало?", en:"Do you have a pen? (to a friend)", o:["имаш","имам","имате","имаат"], why:"ти имаш."},
+  {t:"mc", pic:"🍞", q:"Ние ___ леб дома. Мора да купиме!", en:"We have no bread at home. We have to buy some!", o:["немаме","немате","немаат","немам"], why:"ние немаме."},
+  {t:"mc", q:"Таа ___ време за ручек, работи цел ден.", en:"She has no time for lunch, she works all day.", o:["нема","немам","немаш","немаат"], why:"тој / таа нема: like има, with не- in front."},
+  {t:"tf", s:"bag", q:"Елена има книга.", en:"Elena has a book.", a:true, why:"Таа има книга."},
+  {t:"tf", s:"bag", q:"Елена има наочари.", en:"Elena has glasses.", a:false, why:"Таа нема наочари."},
+  {t:"tf", s:"bag", q:"Елена нема слушалки.", en:"Elena doesn't have headphones.", a:false, why:"Таа има слушалки."},
+  {t:"order", en:"They don't have a car, but they have bicycles.", w:["Тие","немаат","автомобил,","но","имаат","велосипеди."]}
+ ]},
+ { ch:3, mk:"Бои", en:"Colours", qs:[
+  {t:"mc", swatch:"#D3312A", q:"Која боја е ова?", en:"What colour is this?", o:["црвена","жолта","сина","зелена"], why:"црвена = red."},
+  {t:"mc", swatch:"#7B4A2A", q:"Која боја е ова?", en:"What colour is this?", o:["кафеава","сива","портокалова","розова"], why:"кафеава = brown, like кафе (coffee)."},
+  {t:"mc", swatch:"#7B3FA0", q:"Која боја е ова?", en:"What colour is this?", o:["виолетова","розова","сина","кафеава"], why:"виолетова = purple / violet."},
+  {t:"mc", pic:"🍋", q:"Лимонот е ___.", en:"The lemon is yellow.", o:["жолт","жолта","жолто","жолти"], why:"лимон ends in a consonant (masculine): жолт."},
+  {t:"mc", pic:"🍓 🍓", q:"Јагодите се ___.", en:"The strawberries are red.", o:["црвени","црвена","црвено","црвен"], why:"Plural noun, plural colour: црвени."},
+  {t:"mc", pic:"🌊", q:"Морето е ___.", en:"The sea is blue.", o:["плаво","плава","плав","плави"], why:"море ends in -е (neuter): плаво."},
+  {t:"mc", flag:true, q:"Знамето на Македонија е црвено и ___.", en:"The flag of Macedonia is red and yellow.", o:["жолто","жолта","жолт","жолти"], why:"знаме is neuter, so жолто, like црвено."},
+  {t:"mc", q:"Која реченица има грешка?", en:"Which sentence has a mistake?", o:["Имам розова телефон.","Имам розов телефон.","Колата е сива.","Облаците се бели."], why:"телефон is masculine: розов телефон."},
+  {t:"match", q:"Поврзи ги зборовите.", en:"Match the words.", p:[["светло","light"],["темно","dark"],["сребрен","silver"],["златен","golden"],["сив","grey"]]}
+ ]},
+ { ch:3, mk:"Еден обичен ден", en:"A normal day", qs:[
+  {t:"tf", s:"ana", q:"Ана станува во седум часот.", en:"Ana gets up at seven.", a:false, why:"Ана станува во шест часот."},
+  {t:"tf", s:"ana", q:"Ана оди на работа со автобус.", en:"Ana goes to work by bus.", a:true, why:"Во осум часот оди на работа со автобус."},
+  {t:"tf", s:"ana", q:"За ручек Ана јаде пица.", en:"Ana eats pizza for lunch.", a:false, why:"За ручек јаде салата."},
+  {t:"tf", s:"ana", q:"Ана има куче.", en:"Ana has a dog.", a:true, why:"Попладне шета со своето куче."},
+  {t:"mc", s:"ana", q:"Што пие Ана наутро?", en:"What does Ana drink in the morning?", o:["чај со мед","кафе со млеко","вода","сок"], why:"Пие чај со мед (tea with honey). сок = juice."},
+  {t:"order", q:"Подреди го денот на Ана.", en:"Put Ana's day in order.", w:["станува","оди на работа","јаде салата","шета со кучето","си легнува"]},
+  {t:"match", q:"Поврзи.", en:"Match the meals and times of day.", p:[["појадок","breakfast"],["ручек","lunch"],["вечера","dinner"],["попладне","afternoon"],["навечер","in the evening"]]},
+  {t:"mc", q:"Кога јадеме појадок?", en:"When do we eat ‘појадок’?", o:["наутро","напладне","навечер","ноќе"], why:"појадок = breakfast; наутро = in the morning."}
+ ]},
+ { ch:3, mk:"Храна", en:"Food", qs:[
+  {t:"match", q:"На пазар: овошје.", en:"At the market: fruit. Match the pictures.", p:[["цреша","🍒"],["круша","🍐"],["јагода","🍓"],["лубеница","🍉"],["грозје","🍇"],["праска","🍑"]]},
+  {t:"match", q:"На пазар: зеленчук.", en:"At the market: vegetables. Match the pictures.", p:[["морков","🥕"],["компир","🥔"],["кромид","🧅"],["домат","🍅"],["краставица","🥒"],["модар патлиџан","🍆"]]},
+  {t:"sort", q:"Слатко или солено?", en:"Sweet or savoury?", b:["слатко / sweet","солено / savoury"], i:[["баклава",0],["бурек",1],["тулумба",0],["сарма",1],["сладолед",0],["ајвар",1],["трилече",0],["тавче гравче",1]]},
+  {t:"mc", q:"Тавче гравче се прави од…", en:"Tavče gravče is made from…", o:["грав","компири","риба","јагоди"], why:"грав = beans. Tavče gravče is beans baked in a clay pan."},
+  {t:"mc", q:"Ајварот се прави од…", en:"Ajvar is made from…", o:["пиперки","јаболка","леб","млеко"], why:"Roasted red peppers (пиперки), often with eggplant."},
+  {t:"mc", q:"Кој збор не одговара?", en:"Odd one out:", o:["морков","лубеница","цреша","круша"], why:"морков (carrot) is a vegetable; the others are fruit."},
+  {t:"mc", q:"Келнерот прашува: „Што сакате за десерт?“", en:"The waiter asks: ‘What would you like for dessert?’ (ве молам = please)", o:["Баклава, ве молам.","Ајвар, ве молам.","Компир, ве молам.","Леќа, ве молам."], why:"Баклава is the only dessert here."},
+  {t:"order", en:"I want stuffed peppers and a salad.", w:["Сакам","пунети","пиперки","и","салата."], alt:["Сакам салата и пунети пиперки."]}
+ ]},
+ { ch:4, mk:"На пат", en:"Travelling", qs:[
+  {t:"mc", q:"Елена бара автобуска станица. Што прашува?", en:"Elena is looking for the bus station. What does she ask?", o:["Каде се наоѓа автобуската станица?","Колку чини таксито?","Може ли да добијам мапа?","Дали е далеку?"], why:"Каде се наоѓа…? = Where is…?"},
+  {t:"mc", pic:"🎫", q:"Таа сака да ја знае цената на билетот до Охрид.", en:"She wants to know the price of a ticket to Ohrid.", o:["Колку чини билетот до Охрид?","Каде е Охрид?","Дали овој автобус оди до Охрид?","Како да стигнам до Охрид?"], why:"Колку чини…? = How much is…?"},
+  {t:"mc", pic:"🚌", q:"Таа е на станицата. Не знае дали автобусот оди до Струга.", en:"She's at the station and isn't sure the bus goes to Struga.", o:["Дали овој автобус оди до Струга?","Каде можам да купам билет?","Колку е далеку Струга?","Може ли да повикате такси?"], why:"Дали овој автобус оди до…? = Does this bus go to…?"},
+  {t:"mc", q:"Еден човек вели: „Тоа е близу, пет минути пешки.“", en:"A man says this. What does he mean?", o:["It's close, five minutes on foot.","It's far, fifty minutes by bus.","It's closed for five minutes.","Take a taxi, it's far."], why:"близу = close; пешки = on foot."},
+  {t:"mc", pic:"🚕", q:"Таксистот вели: „Аеродромот е далеку.“", en:"The taxi driver says this. What does it mean?", o:["The airport is far.","The airport is close.","The airport is closed.","The airport is behind us."], why:"далеку = far."},
+  {t:"order", en:"How do I get to the lake?", w:["Како","да","стигнам","до","езерото?"]},
+  {t:"match", q:"Поврзи.", en:"Match the travel words.", p:[["железничка станица","train station"],["автобуска станица","bus station"],["билет","ticket"],["мапа","map"],["најблиската","the closest"]]},
+  {t:"mc", pic:"🗺️", q:"Немаш мапа. Што прашуваш во хотелот?", en:"You don't have a map. What do you ask at the hotel?", o:["Може ли да добијам мапа?","Колку чини билетот?","Каде е ресторант?","Дали е близу?"], why:"Може ли да добијам…? = Can I get…?"}
+ ]},
+ { ch:4, mk:"Кујна", en:"Kitchen", qs:[
+  {t:"match", q:"Постави ја масата.", en:"Set the table: match the pictures.", p:[["лажица","🥄"],["нож","🔪"],["виљушка","🍴"],["чинија","🍽️"],["чаша за вино","🍷"],["филџан","☕"]]},
+  {t:"mc", pic:"🍲", q:"Со што јадеме супа?", en:"What do we eat soup with?", o:["лажица","нож","тава","ренде"], why:"лажица = spoon."},
+  {t:"mc", pic:"🥛", q:"Каде го ставаме млекото за да биде ладно?", en:"Where do we put the milk to keep it cold?", o:["во фрижидерот","во рерната","во мијалникот","во тавата"], why:"фрижидер = fridge."},
+  {t:"mc", pic:"🍅", q:"Со што сечеме домат?", en:"What do we cut a tomato with?", o:["нож","лажица","капак","бокал"], why:"нож = knife."},
+  {t:"mc", q:"Кој збор не одговара?", en:"Odd one out:", o:["виљушка","шпорет","рерна","микро печка"], why:"шпорет, рерна and микро печка are appliances; виљушка is a fork."},
+  {t:"mc", pic:"🍝", q:"Тестенините ги цедиме во…", en:"We drain the pasta in the…", o:["цедалка","чаша","фрижидер","сунѓер"], why:"цедалка = colander."},
+  {t:"sort", q:"За јадење или за готвење?", en:"For eating or for cooking?", b:["јадење / eating","готвење / cooking"], i:[["лажица",0],["тенџере",1],["виљушка",0],["тава",1],["чинија",0],["даска за сечење",1],["чаша",0],["ренде",1]]},
+  {t:"mc", q:"Садовите ги миеме во…", en:"We wash the dishes in the…", o:["мијалникот","рерната","фрижидерот","тенџерето"], why:"мијалник = sink."}
+ ]},
+ { ch:4, mk:"Предлози", en:"Prepositions", qs:[
+  {t:"mc", scene:"na", q:"Каде е топката?", en:"Where is the ball?", o:["на масата","под масата","до масата","над масата"], why:"на = on."},
+  {t:"mc", scene:"pod", q:"Каде е топката?", en:"Where is the ball?", o:["под масата","на масата","до масата","над масата"], why:"под = under."},
+  {t:"mc", scene:"do", q:"Каде е топката?", en:"Where is the ball?", o:["до масата","под масата","на масата","над масата"], why:"до = next to."},
+  {t:"mc", scene:"nad", q:"Каде е лампата?", en:"Where is the lamp?", o:["над масата","под масата","на масата","до масата"], why:"над = above."},
+  {t:"mc", scene:"vo", q:"Каде е топката?", en:"Where is the ball?", o:["во кутијата","на кутијата","под кутијата","до кутијата"], why:"во = in, inside."},
+  {t:"mc", scene:"zad", q:"Каде е топката?", en:"Where is the ball?", o:["зад кутијата","пред кутијата","во кутијата","под кутијата"], why:"зад = behind. The box hides part of the ball."},
+  {t:"mc", scene:"pomegju", q:"Каде е топката?", en:"Where is the ball?", o:["помеѓу кутиите","во кутиите","на кутиите","зад кутиите"], why:"помеѓу = between."},
+  {t:"mc", pic:"🍯", q:"Пијам чај ___ мед.", en:"I drink tea with honey.", o:["со","без","низ","против"], why:"со = with."},
+  {t:"mc", pic:"🌧️", q:"___ прогнозата, утре ќе врне.", en:"According to the forecast, it will rain tomorrow.", o:["Според","Против","Кон","Низ"], why:"според = according to."},
+  {t:"mc", q:"Вечерва сме ___ баба Ружа.", en:"Tonight we're at Grandma Ruža's.", o:["кај","кон","низ","под"], why:"кај = at someone's place."},
+  {t:"mc", pic:"🪟", q:"Светлината влегува ___ прозорецот.", en:"The light comes in through the window.", o:["низ","над","кај","без"], why:"низ = through."}
+ ]},
+ { ch:5, mk:"Род и множина", en:"Gender & plural", qs:[
+  {t:"sort", q:"Машки, женски или среден род?", en:"Masculine, feminine or neuter?", b:["машки / masc.","женски / fem.","среден / neut."], i:[["телефон",0],["лампа",1],["сонце",2],["клуч",0],["шума",1],["езеро",2],["облак",0],["чинија",1],["кафе",2]]},
+  {t:"mc", q:"мост (bridge) → многу ___", en:"Plural of мост (bridge):", o:["мостови","мости","моства","мостеви"], why:"One-syllable masculine nouns often add -ови."},
+  {t:"mc", q:"слој (layer) → многу ___", en:"Plural of слој (layer):", o:["слоеви","слојови","слоји","слојиња"], why:"After ј, ч, ш, џ the ending is -еви, and ј merges in: слој → слоеви."},
+  {t:"mc", q:"ќебе (blanket) → многу ___", en:"Plural of ќебе (blanket):", o:["ќебиња","ќеби","ќебови","ќеба"], why:"Neuter nouns in -е often take -иња."},
+  {t:"mc", q:"езеро (lake) → многу ___", en:"Plural of езеро (lake):", o:["езера","езери","езериња","езерови"], why:"Neuter nouns in -о change to -а."},
+  {t:"mc", q:"Во паркот има многу ___ (човек).", en:"There are many people in the park.", o:["луѓе","човеци","човекови","човеки"], why:"човек → луѓе is irregular."},
+  {t:"mc", pic:"🙌", q:"Имам две ___ (рака).", en:"I have two hands.", o:["раце","раки","ракови","рачиња"], why:"рака → раце is irregular."},
+  {t:"mc", pic:"🐱", q:"Мачката има зелени ___ (око).", en:"The cat has green eyes.", o:["очи","оки","окови","окиња"], why:"око → очи is irregular."},
+  {t:"mc", q:"Кој збор не одговара?", en:"Odd one out (by gender):", o:["село","книга","маса","жена"], why:"село is neuter; the others are feminine."}
+ ]},
+ { ch:5, mk:"Придавки и член", en:"Adjectives & ‘the’", qs:[
+  {t:"mc", q:"Имаме ___ кујна. (мал)", en:"We have a small kitchen.", o:["мала","мал","мало","мали"], why:"кујна is feminine: мала."},
+  {t:"mc", pic:"☕", q:"Кафето е ___. (топол)", en:"The coffee is hot.", o:["топло","топол","топла","топли"], why:"кафе is neuter: топло."},
+  {t:"mc", q:"Тие се ___ деца. (среќен)", en:"They are happy children.", o:["среќни","среќна","среќно","среќен"], why:"Plural: среќни."},
+  {t:"mc", pic:"🎒", q:"„the backpack“ = ?", en:"How do you say ‘the backpack’?", o:["ранецот","ранецта","ранецто","ранецте"], why:"Masculine nouns take -от."},
+  {t:"mc", pic:"🍽️", q:"„the plate“ = ?", en:"How do you say ‘the plate’?", o:["чинијата","чинијаот","чинијато","чинијате"], why:"Feminine nouns take -та."},
+  {t:"mc", q:"„the big park“ = ?", en:"How do you say ‘the big park’?", o:["големиот парк","голем паркот","големата парк","големото парк"], why:"The article moves onto the adjective: голем → големиот."},
+  {t:"mc", q:"„the new café“ = ?", en:"How do you say ‘the new café’? (кафуле is neuter)", o:["новото кафуле","ново кафулето","новиот кафуле","новата кафуле"], why:"ново + то = новото."},
+  {t:"mc", q:"Барам ___. Ме боли главата!", en:"I'm looking for a pharmacy. I have a headache!", o:["аптека","аптеката"], why:"Any pharmacy, not a specific one: no article."},
+  {t:"mc", q:"___ е затворена.", en:"The pharmacy is closed.", o:["Аптеката","Аптека"], why:"One specific pharmacy: аптека + та."},
+  {t:"order", en:"The small dog is barking at the black cat.", w:["Малото","куче","лае","на","црната","мачка."]}
+ ]},
+ { ch:5, mk:"Семејство, часот, глаголи", en:"Family, time & verbs", qs:[
+  {t:"mc", q:"Сестрата на мојата мајка е мојата…", en:"My mother's sister is my…", o:["тетка","баба","стрина","братучедка"], why:"тетка = aunt (on either side)."},
+  {t:"mc", q:"Братот на мојата мајка е мојот…", en:"My mother's brother is my…", o:["вујко","чичко","тетин","дедо"], why:"вујко = mother's brother; чичко = father's brother."},
+  {t:"mc", q:"Ќерката на мојот чичко е мојата…", en:"My uncle's daughter is my…", o:["братучедка","сестра","тетка","вујна"], why:"братучедка = female cousin."},
+  {t:"mc", q:"Мажот на мојата тетка е мојот…", en:"My aunt's husband is my…", o:["тетин","вујко","чичко","брат"], why:"тетин = aunt's husband."},
+  {t:"mc", clock:"7:15", q:"Колку е часот?", en:"What time is it?", o:["седум и петнаесет","петнаесет и седум","седум и педесет","осум и петнаесет"], why:"седум часот и петнаесет минути = 7:15."},
+  {t:"mc", clock:"9:30", q:"Колку е часот?", en:"What time is it?", o:["девет и пол","десет и пол","шест и девет","девет и три"], why:"и пол = half past, so 9:30 = девет и пол."},
+  {t:"mc", clock:"11:05", q:"Колку е часот?", en:"What time is it?", o:["единаесет и пет","пет и единаесет","дванаесет и пет","единаесет и педесет"], why:"единаесет часот и пет минути = 11:05."},
+  {t:"mc", pic:"🍕", q:"Тие ___ пица.", en:"They are eating pizza.", o:["јадат","јадеме","јаде","јадеш"], why:"тие јадат."},
+  {t:"mc", pic:"🍦", q:"Ние ___ сладолед.", en:"We want ice cream.", o:["сакаме","сакате","сакаат","сакам"], why:"ние сакаме."},
+  {t:"mc", q:"Што ___ вие да пиете?", en:"What would you like to drink? (formal)", o:["сакате","сакаш","сакаат","сака"], why:"вие сакате."},
+  {t:"order", en:"Grandma, what are we eating for lunch?", w:["Бабо,","што","јадеме","за","ручек?"]}
+ ]}
+];
+/* ---------- Level 2 (A2) ---------- */
+Object.assign(STORIES, {
+  pazar: { pic: "🍅 🫑 🛒",
+    mk: "— Добар ден! Дали имате свежи домати?\n— Да, имаме. Колку сакате?\n— Едно кило, ве молам. Колку чини?\n— Осумдесет денари.\n— Повелете. Имате ли и пиперки?\n— Немаме, за жал.",
+    en: "— Good afternoon! Do you have fresh tomatoes?\n— Yes, we do. How much would you like?\n— One kilo, please. How much is it?\n— Eighty denars.\n— Here you are. Do you also have peppers?\n— Unfortunately we don't." },
+  grozdober: { pic: "🍇 🧺 👵 👴",
+    mk: "Во септември семејството на дедо Трајко има многу работа. Тие мораат да го соберат грозјето пред да почне дождот. Дедо Трајко не може да работи многу, па Јована и Бојан му помагаат. Баба Цвета готви ручек за сите. Навечер сите седат во дворот и пијат домашен сок од грозје.",
+    en: "In September Grandpa Trajko's family has a lot of work. They have to pick the grapes before the rain starts. Grandpa Trajko can't work much, so Jovana and Bojan help him. Grandma Cveta cooks lunch for everyone. In the evening they all sit in the yard and drink homemade grape juice." },
+  mavrovo: { pic: "🏔️ ⛷️ 🔥 ☕",
+    mk: "Во петок Марко и Ивана ќе патуваат за Маврово. Прогнозата вели дека во сабота ќе вее снег, а во недела ќе биде сончево. Во сабота тие ќе скијаат цел ден. Навечер ќе седат покрај каминот и ќе пијат топол чај. Во недела ќе прошетаат покрај езерото и ќе се вратат во Скопје.",
+    en: "On Friday Marko and Ivana will travel to Mavrovo. The forecast says it will snow on Saturday, and on Sunday it will be sunny. On Saturday they will ski all day. In the evening they will sit by the fireplace and drink hot tea. On Sunday they will walk by the lake and go back to Skopje." },
+  muzej: { pic: "🏛️ 🌉 🚶",
+    mk: "— Извинете, каде е музејот?\n— Одите право до крстосницата, а потоа лево. Музејот е до мостот.\n— Далеку ли е?\n— Не, близу е. Пет минути пешки.",
+    en: "— Excuse me, where is the museum?\n— You go straight to the crossroads, then left. The museum is next to the bridge.\n— Is it far?\n— No, it's close. Five minutes on foot." }
+});
+
+const CHAPTERS_2 = [
+  { city: "Прилеп",    mk: "Елена има многу прашања.",           en: "Elena has lots of questions." },
+  { city: "Велес",     mk: "Секојдневие покрај Вардар.",          en: "Everyday life by the Vardar river." },
+  { city: "Кавадарци", mk: "Гроздобер: сите имаат работа.",       en: "Grape harvest: everyone has a job to do." },
+  { city: "Маврово",   mk: "Снег, сонце и планови за викенд.",    en: "Snow, sun and plans for the weekend." },
+  { city: "Куманово",  mk: "Подароци за сите.",                   en: "Presents for everyone." },
+  { city: "Кратово",   mk: "Мал град со многу живот.",            en: "A small town full of life." }
+];
+
+const STOPS_2 = [
+ { ch:0, mk:"Прашални зборови", en:"Question words", qs:[
+  {t:"mc", q:"___ живееш? — Живеам во Скопје.", en:"Where do you live? — I live in Skopje.", o:["Каде","Кога","Зошто","Колку"], why:"каде = where."},
+  {t:"mc", q:"___ почнува филмот? — Во осум часот.", en:"When does the film start? — At eight o'clock.", o:["Кога","Каде","Кој","Како"], why:"кога = when."},
+  {t:"mc", q:"___ учиш македонски? — Затоа што е убав јазик.", en:"Why are you learning Macedonian? — Because it's a beautiful language.", o:["Зошто","Што","Каде","Колку"], why:"зошто = why. The answer often starts with затоа што = because."},
+  {t:"mc", pic:"☕", q:"___ чини кафето? — Осумдесет денари.", en:"How much is the coffee? — Eighty denars.", o:["Колку","Каде","Кога","Чиј"], why:"колку = how much / how many."},
+  {t:"mc", q:"___ правиш вечерва? — Гледам филм.", en:"What are you doing tonight? — I'm watching a film.", o:["Што","Кој","Кога","Каде"], why:"што = what."},
+  {t:"mc", pic:"🚌", q:"___ одиш на работа? — Со автобус.", en:"How do you get to work? — By bus.", o:["Како","Каде","Колку","Зошто"], why:"како = how."},
+  {t:"match", q:"Поврзи го прашалниот збор.", en:"Match each question word.", p:[["каде","where"],["кога","when"],["зошто","why"],["како","how"],["колку","how much"],["што","what"]]},
+  {t:"mc", q:"Одговорот е: „Јас сум од Велес.“ Кое е прашањето?", en:"The answer is ‘I'm from Veles.’ What was the question?", o:["Од каде си?","Каде одиш?","Кога доаѓаш?","Колку години имаш?"], why:"Од каде си? = Where are you from?"},
+  {t:"mc", q:"Одговорот е: „Имам дваесет и пет години.“ Кое е прашањето?", en:"The answer is ‘I'm 25.’ What was the question?", o:["Колку години имаш?","Колку чини?","Како се викаш?","Кога имаш час?"], why:"Колку години имаш? = How old are you?"},
+  {t:"order", en:"Where does your sister work?", w:["Каде","работи","твојата","сестра?"]}
+ ]},
+ { ch:0, mk:"Кој и чиј", en:"Which and whose", qs:[
+  {t:"mc", q:"___ жена е твојата професорка?", en:"Which woman is your teacher?", o:["Која","Кој","Кое","Кои"], why:"жена is feminine, so која."},
+  {t:"mc", q:"___ дете плаче?", en:"Which child is crying?", o:["Кое","Кој","Која","Кои"], why:"дете is neuter, so кое."},
+  {t:"mc", q:"Во ___ град живееш?", en:"Which town do you live in?", o:["кој","која","кое","кои"], why:"град is masculine, so кој."},
+  {t:"mc", q:"___ се твоите омилени филмови?", en:"Which are your favourite films?", o:["Кои","Кој","Која","Кое"], why:"филмови is plural, so кои."},
+  {t:"mc", pic:"📱", q:"___ е овој телефон?", en:"Whose phone is this?", o:["Чиј","Чија","Чие","Чии"], why:"телефон is masculine: чиј, and овој."},
+  {t:"mc", pic:"🧥", q:"___ е ова палто?", en:"Whose coat is this?", o:["Чие","Чиј","Чија","Чии"], why:"палто is neuter: чие, and ова."},
+  {t:"mc", pic:"🔑 🔑", q:"___ се овие клучеви?", en:"Whose keys are these?", o:["Чии","Чиј","Чија","Чие"], why:"клучеви is plural: чии, and овие."},
+  {t:"mc", pic:"🏠", q:"___ куќа е многу стара.", en:"This house is very old.", o:["Оваа","Овој","Ова","Овие"], why:"куќа is feminine: оваа. Masculine овој, neuter ова, plural овие."},
+  {t:"sort", q:"Овој, оваа или ова?", en:"‘This’: masculine, feminine or neuter?", b:["овој","оваа","ова"], i:[["стол",0],["маса",1],["пенкало",2],["автобус",0],["чаша",1],["јаболко",2],["клуч",0],["куќа",1],["дете",2]]}
+ ]},
+ { ch:0, mk:"Дали, ли и нели", en:"Yes/no questions", qs:[
+  {t:"mc", q:"Направи прашање: „Ти зборуваш англиски.“", en:"Make it a question: ‘You speak English.’", o:["Дали зборуваш англиски?","Што зборуваш англиски?","Каде зборуваш англиски?","Зборуваш дали англиски?"], why:"Дали at the start turns a sentence into a yes/no question."},
+  {t:"mc", q:"Кое прашање е точно?", en:"Which question is correct? (Do you want coffee?)", o:["Сакаш ли кафе?","Ли сакаш кафе?","Сакаш кафе ли?","Ли кафе сакаш?"], why:"ли comes right after the verb: Сакаш ли…?"},
+  {t:"mc", pic:"☀️", q:"Денес е убав ден, ___?", en:"It's a nice day today, isn't it?", o:["нели","дали","ли","зошто"], why:"нели at the end = isn't it? / right?"},
+  {t:"mc", q:"Ти доаѓаш со нас, ___?", en:"You're coming with us, right?", o:["нели","кога","ли","што"], why:"нели asks the other person to confirm."},
+  {t:"tf", s:"pazar", q:"Продавачот има домати.", en:"The seller has tomatoes.", a:true, why:"Да, имаме."},
+  {t:"tf", s:"pazar", q:"Доматите чинат шеесет денари.", en:"The tomatoes cost sixty denars.", a:false, why:"Осумдесет денари: eighty."},
+  {t:"tf", s:"pazar", q:"Продавачот има и пиперки.", en:"The seller also has peppers.", a:false, why:"Немаме, за жал: unfortunately not."},
+  {t:"order", en:"Are you ready? (to a woman)", w:["Спремна","ли","си?"]},
+  {t:"order", en:"Your brother lives in Veles, right?", w:["Твојот","брат","живее","во","Велес,","нели?"]}
+ ]},
+ { ch:1, mk:"Глаголи на -а", en:"а-group verbs", qs:[
+  {t:"mc", pic:"📰", q:"Јас ___ весник секое утро. (чита)", en:"I read the newspaper every morning.", o:["читам","чита","читаш","читаат"], why:"а-group: јас + -м → читам."},
+  {t:"mc", pic:"🎶", q:"Ние ___ музика во колата. (слуша)", en:"We listen to music in the car.", o:["слушаме","слушаат","слушате","слушам"], why:"ние + -ме → слушаме."},
+  {t:"mc", pic:"⚽", q:"Тие ___ фудбал во паркот. (игра)", en:"They play football in the park.", o:["играат","игра","играме","играш"], why:"тие + -ат → играат (two а's)."},
+  {t:"mc", q:"Вие ___ многу добро македонски! (зборува)", en:"You speak Macedonian very well!", o:["зборувате","зборуваме","зборуваат","зборуваш"], why:"вие + -те → зборувате."},
+  {t:"mc", pic:"✉️", q:"Ти ___ писмо на баба. (пишува)", en:"You are writing a letter to grandma.", o:["пишуваш","пишувам","пишува","пишуваат"], why:"ти + -ш → пишуваш."},
+  {t:"mc", pic:"🚏", q:"Ивана ___ автобус на станицата. (чека)", en:"Ivana is waiting for the bus at the stop.", o:["чека","чекам","чекаат","чекаш"], why:"тој / таа: no ending → чека."},
+  {t:"match", q:"Поврзи: глаголот гледа.", en:"Match each person to the right form of гледа (watch).", p:[["јас","гледам"],["ти","гледаш"],["таа","гледа"],["ние","гледаме"],["вие","гледате"],["тие","гледаат"]]},
+  {t:"order", en:"We go shopping on Saturday.", w:["Ние","пазаруваме","во","сабота."]}
+ ]},
+ { ch:1, mk:"Глаголи на -е", en:"е-group verbs", qs:[
+  {t:"mc", pic:"🍵", q:"Јас ___ чај со лимон. (пие)", en:"I drink tea with lemon.", o:["пијам","пиам","пие","пиеш"], why:"пие → јас пијам: a ј comes in."},
+  {t:"mc", pic:"🎤", q:"Ти ___ многу убаво! (пее)", en:"You sing very nicely!", o:["пееш","пеам","пее","пеат"], why:"ти + -ш → пееш."},
+  {t:"mc", q:"Каде ___ вие? (живее)", en:"Where do you live? (plural or formal)", o:["живеете","живееме","живеат","живееш"], why:"вие + -те → живеете."},
+  {t:"mc", pic:"🍢", q:"Тие ___ ќебапи со кромид. (јаде)", en:"They eat kebapi with onion.", o:["јадат","јадеат","јаде","јадеме"], why:"е-group: тие → јадат, not јадеат."},
+  {t:"mc", pic:"📮", q:"Јас не ___ каде е поштата. (знае)", en:"I don't know where the post office is.", o:["знам","знаам","знае","знаеш"], why:"знае is a little irregular: јас знам."},
+  {t:"mc", q:"Ние ___ да дојдеме утре. (може)", en:"We can come tomorrow.", o:["можеме","можам","можат","можете"], why:"ние + -ме → можеме."},
+  {t:"mc", pic:"😂", q:"Децата ___ на шегата. (се смее)", en:"The children laugh at the joke.", o:["се смеат","се смее","се смееме","се смеам"], why:"децата = тие → се смеат."},
+  {t:"sort", q:"А-група или е-група?", en:"а-group or е-group?", b:["а-група / а-group","е-група / е-group"], i:[["чита",0],["пее",1],["гледа",0],["живее",1],["слуша",0],["пие",1],["игра",0],["јаде",1]]},
+  {t:"order", en:"Where do your parents live?", w:["Каде","живеат","твоите","родители?"]}
+ ]},
+ { ch:1, mk:"Глаголи на -и", en:"и-group verbs", qs:[
+  {t:"mc", pic:"📚", q:"Јас ___ македонски секој ден. (учи)", en:"I study Macedonian every day.", o:["учам","учи","учиш","учат"], why:"и-group: јас + -ам → учам."},
+  {t:"mc", q:"Што ___ ти денес? (прави)", en:"What are you doing today?", o:["правиш","правам","прави","прават"], why:"ти + -ш → правиш."},
+  {t:"mc", pic:"🏥", q:"Бојан ___ во болница. (работи)", en:"Bojan works in a hospital.", o:["работи","работам","работат","работиш"], why:"тој: no ending → работи."},
+  {t:"mc", pic:"🚶", q:"Ние ___ на работа пешки. (оди)", en:"We walk to work.", o:["одиме","одите","одат","одам"], why:"ние + -ме → одиме."},
+  {t:"mc", pic:"🚪", q:"Тие ___ пред вратата. (стои)", en:"They are standing in front of the door.", o:["стојат","стоат","стои","стоиме"], why:"стои gets a ј: јас стојам, тие стојат."},
+  {t:"mc", pic:"🌧️", q:"Баба Ружа ___ дека ќе врне. (мисли)", en:"Grandma Ruža thinks it will rain.", o:["мисли","мислам","мислат","мислиш"], why:"таа: no ending → мисли."},
+  {t:"mc", pic:"🏎️", q:"Вие ___ многу брзо! (вози)", en:"You drive very fast!", o:["возите","возиме","возат","возиш"], why:"вие + -те → возите."},
+  {t:"sort", q:"Која група?", en:"Which group does each verb belong to?", b:["а-група / а","е-група / е","и-група / и"], i:[["зборува",0],["пие",1],["учи",2],["чека",0],["живее",1],["работи",2],["игра",0],["знае",1],["прави",2]]},
+  {t:"match", q:"Како се вели со „јас“?", en:"Match each verb to its ‘јас’ (I) form.", p:[["учи","учам"],["пие","пијам"],["знае","знам"],["стои","стојам"],["оди","одам"],["чита","читам"]]}
+ ]},
+ { ch:2, mk:"Може, мора, треба", en:"Can, must, need", qs:[
+  {t:"mc", pic:"🤒", q:"Јас не ___ да дојдам денес, болна сум.", en:"I can't come today, I'm ill. (a woman)", o:["можам","може","можеш","можеме"], why:"јас можам. After може comes да + verb."},
+  {t:"mc", pic:"⏰", q:"Утре ___ да станам рано, имам испит.", en:"Tomorrow I have to get up early, I have an exam.", o:["морам","морате","мораат","мораме"], why:"мора = must / have to: јас морам."},
+  {t:"mc", pic:"🍞", q:"___ да купиме леб и млеко.", en:"We need to buy bread and milk.", o:["Треба","Можат","Мораш","Сака"], why:"Треба да… = need to / should. треба never changes."},
+  {t:"mc", pic:"☂️", q:"Ми ___ чадор, врне дожд!", en:"I need an umbrella, it's raining!", o:["треба","мора","може","сака"], why:"Ми треба = I need (literally ‘to me is needed’)."},
+  {t:"mc", pic:"🏖️", q:"Сакам ___ одам на плажа.", en:"I want to go to the beach.", o:["да","ли","на","во"], why:"After сака, може, мора and треба the next verb comes with да."},
+  {t:"mc", q:"Можеш ли да ми ___? (помогне)", en:"Can you help me?", o:["помогнеш","помогне","помогнам","помогнат"], why:"Both verbs go with ти: можеш … да помогнеш."},
+  {t:"mc", pic:"🎬", q:"Тие сакаат ___ во кино.", en:"They want to go to the cinema.", o:["да одат","да одам","одат","да оди"], why:"тие сакаат да одат: both verbs in the тие form."},
+  {t:"order", en:"Can I have a glass of water?", w:["Може","ли","една","чаша","вода?"]},
+  {t:"order", en:"We have to go home.", w:["Мораме","да","одиме","дома."]}
+ ]},
+ { ch:2, mk:"Хобија", en:"Hobbies", qs:[
+  {t:"match", q:"Поврзи го хобито со сликата.", en:"Match each hobby to its picture.", p:[["пливање","🏊"],["трчање","🏃"],["шах","♟️"],["планинарење","🥾"],["велосипедизам","🚴"],["пеење","🎤"]]},
+  {t:"match", q:"Спортови со топка.", en:"Ball sports: match the pictures.", p:[["фудбал","⚽"],["кошарка","🏀"],["одбојка","🏐"],["тенис","🎾"]]},
+  {t:"mc", pic:"🏊", q:"Ивана сака да ___ во езерото. (плива)", en:"Ivana likes to swim in the lake.", o:["плива","пливам","пливање","пливаат"], why:"таа сака да плива: the second verb also goes with таа."},
+  {t:"mc", q:"Што правиш во слободното време?", en:"What do you do in your free time?", o:["Играм шах со мојот дедо.","Имам триесет години.","Јас сум од Велес.","Во осум часот."], why:"слободно време = free time."},
+  {t:"mc", pic:"⛰️", q:"Кое хоби е на планина?", en:"Which hobby happens on a mountain?", o:["планинарење","пливање","нуркање","шах"], why:"планина = mountain, so планинарење = hiking."},
+  {t:"sort", q:"Со топка или без топка?", en:"With a ball or without one?", b:["со топка / with a ball","без топка / no ball"], i:[["фудбал",0],["кошарка",0],["одбојка",0],["тенис",0],["пливање",1],["трчање",1],["шах",1],["јога",1]]},
+  {t:"mc", pic:"⚽", q:"Марко ___ фудбал секоја сабота.", en:"Marko plays football every Saturday.", o:["игра","игри","играње","играат"], why:"тој игра. играње is the noun ‘playing’."},
+  {t:"order", en:"In my free time I like to read.", w:["Во","слободното","време","сакам","да","читам."]}
+ ]},
+ { ch:2, mk:"Гроздобер", en:"Grape harvest (reading)", qs:[
+  {t:"tf", s:"grozdober", q:"Грозјето го собираат во септември.", en:"They pick the grapes in September.", a:true, why:"Во септември… They pick (собираат) the grapes."},
+  {t:"tf", s:"grozdober", q:"Дедо Трајко работи најмногу.", en:"Grandpa Trajko works the most.", a:false, why:"Дедо Трајко не може да работи многу."},
+  {t:"tf", s:"grozdober", q:"Баба Цвета готви ручек за сите.", en:"Grandma Cveta cooks lunch for everyone.", a:true, why:"Баба Цвета готви ручек за сите."},
+  {t:"mc", s:"grozdober", q:"Зошто мораат да брзаат?", en:"Why do they have to hurry? (брза = hurry)", o:["Пред да почне дождот.","Затоа што е недела.","Затоа што се гладни.","Затоа што е ноќ."], why:"…пред да почне дождот: before the rain starts."},
+  {t:"mc", s:"grozdober", q:"Кој му помага на дедо Трајко?", en:"Who helps Grandpa Trajko?", o:["Јована и Бојан","Баба Цвета","Никој","Марко"], why:"Јована и Бојан му помагаат."},
+  {t:"mc", s:"grozdober", q:"Што пијат навечер во дворот?", en:"What do they drink in the yard in the evening?", o:["домашен сок од грозје","кафе со млеко","чај со мед","ладна вода"], why:"домашен сок од грозје = homemade grape juice."},
+  {t:"match", q:"Зборови од текстот.", en:"Words from the text: match them.", p:[["грозје","grapes"],["двор","yard"],["дожд","rain"],["домашен","homemade"],["помага","helps"],["собира","picks"]]},
+  {t:"order", en:"Grandma cooks lunch for everyone.", w:["Баба","готви","ручек","за","сите."]}
+ ]},
+ { ch:3, mk:"Времето", en:"The weather", qs:[
+  {t:"mc", pic:"☀️", q:"Какво е времето?", en:"What's the weather like?", o:["Сончево е.","Врне дожд.","Облачно е.","Вее снег."], why:"сонце = sun, so сончево = sunny."},
+  {t:"mc", pic:"🌧️", q:"Какво е времето?", en:"What's the weather like?", o:["Врне дожд.","Сончево е.","Ветровито е.","Топло е."], why:"дожд = rain; врне дожд = it's raining."},
+  {t:"mc", pic:"❄️", q:"Какво е времето?", en:"What's the weather like?", o:["Вее снег.","Врне дожд.","Сончево е.","Топло е."], why:"снег = snow; вее снег = it's snowing."},
+  {t:"mc", pic:"💨", q:"Какво е времето?", en:"What's the weather like?", o:["Дува ветер.","Вее снег.","Сончево е.","Облачно е."], why:"ветер = wind; дува = blows. You can also say: Ветровито е."},
+  {t:"mc", pic:"☁️", q:"Какво е времето?", en:"What's the weather like?", o:["Облачно е.","Сончево е.","Вее снег.","Топло е."], why:"облак = cloud, so облачно = cloudy."},
+  {t:"mc", pic:"🌡️", q:"Триесет и пет степени! Многу е ___.", en:"35 degrees! It's very ___.", o:["топло","ладно","свежо","облачно"], why:"степени = degrees; топло = warm / hot."},
+  {t:"mc", q:"Денес е многу свежо ___ е облачно.", en:"It's very chilly today because it's cloudy.", o:["затоа што","но","или","нели"], why:"затоа што (or бидејќи) = because."},
+  {t:"match", q:"Поврзи.", en:"Match the weather words.", p:[["сонце","sun"],["облак","cloud"],["дожд","rain"],["снег","snow"],["ветер","wind"],["ладно","cold"]]},
+  {t:"order", en:"Today the weather is sunny and warm.", w:["Денес","времето","е","сончево","и","топло."]}
+ ]},
+ { ch:3, mk:"Иднина со ќе", en:"The future with ќе", qs:[
+  {t:"mc", pic:"🏔️", q:"Утре јас ___ во Маврово.", en:"Tomorrow I will go to Mavrovo.", o:["ќе одам","ќе оди","одам ќе","ќе одиме"], why:"ќе + the normal present form: ќе одам."},
+  {t:"mc", q:"Што ___ викендов?", en:"What will you do this weekend? (to a friend)", o:["ќе правиш","ќе правам","ќе прави","правиш ќе"], why:"ќе comes before the verb: ќе правиш."},
+  {t:"mc", pic:"⛷️", q:"Ние ___ на скијање во јануари.", en:"We will go skiing in January.", o:["ќе одиме","ќе одат","ќе одам","ќе одите"], why:"ние → ќе одиме."},
+  {t:"mc", pic:"🌧️", q:"Утре ___.", en:"It will rain tomorrow.", o:["ќе врне","врне ќе","ќе врнат","ќе врнам"], why:"ќе врне = it will rain."},
+  {t:"mc", pic:"🎉", q:"Јас ___ дојдам на забавата, работам.", en:"I won't come to the party, I'm working.", o:["нема да","не ќе","ќе не","немам да"], why:"‘Won't’ is нема да + verb, never „не ќе“."},
+  {t:"mc", q:"Тие ___ останат три дена во хотелот.", en:"They will stay three days at the hotel.", o:["ќе","да","ли","нема"], why:"ќе останат = they will stay."},
+  {t:"sort", q:"Сега или подоцна?", en:"Now or later?", b:["сега / now","подоцна / later"], i:[["Јадам.",0],["Ќе јадам.",1],["Денес врне.",0],["Утре ќе врне.",1],["Читам книга.",0],["Ќе се видиме!",1]]},
+  {t:"order", en:"Tonight we will eat at a restaurant.", w:["Вечерва","ќе","јадеме","во","ресторан."]},
+  {t:"order", en:"Ivana won't work on Sunday.", w:["Ивана","нема","да","работи","во","недела."]}
+ ]},
+ { ch:3, mk:"Викенд во Маврово", en:"A weekend in Mavrovo (reading)", qs:[
+  {t:"tf", s:"mavrovo", q:"Марко и Ивана ќе патуваат во петок.", en:"Marko and Ivana will travel on Friday.", a:true, why:"Во петок Марко и Ивана ќе патуваат…"},
+  {t:"tf", s:"mavrovo", q:"Во сабота ќе биде сончево.", en:"It will be sunny on Saturday.", a:false, why:"Во сабота ќе вее снег. It will be sunny on Sunday."},
+  {t:"tf", s:"mavrovo", q:"Во сабота ќе скијаат цел ден.", en:"On Saturday they will ski all day.", a:true, why:"Во сабота тие ќе скијаат цел ден."},
+  {t:"tf", s:"mavrovo", q:"Во недела ќе останат во хотелот.", en:"On Sunday they will stay at the hotel.", a:false, why:"They will walk by the lake and go back to Skopje."},
+  {t:"mc", s:"mavrovo", q:"Каде ќе седат навечер?", en:"Where will they sit in the evening?", o:["покрај каминот","во колата","на плажа","во болница"], why:"покрај каминот = by the fireplace."},
+  {t:"mc", s:"mavrovo", q:"Што ќе пијат навечер?", en:"What will they drink in the evening?", o:["топол чај","ладен сок","кафе со мраз","ладна вода"], why:"топол чај = hot tea."},
+  {t:"mc", s:"mavrovo", q:"Кога ќе се вратат во Скопје?", en:"When will they go back to Skopje?", o:["во недела","во петок","во сабота","во понеделник"], why:"Во недела … ќе се вратат во Скопје."},
+  {t:"order", en:"On Sunday it will be sunny.", w:["Во","недела","ќе","биде","сончево."]}
+ ]},
+ { ch:4, mk:"Го, ја, ги", en:"Him, her, them", qs:[
+  {t:"mc", pic:"📖", q:"Каде е книгата? — Не ___ гледам.", en:"Where's the book? — I don't see it.", o:["ја","го","ги","ме"], why:"книга is feminine → ја."},
+  {t:"mc", pic:"📱", q:"Каде е телефонот? — ___ имам во ташната.", en:"Where's the phone? — I have it in my bag.", o:["Го","Ја","Ги","Те"], why:"телефон is masculine → го."},
+  {t:"mc", pic:"🍓", q:"Ги сакаш ли јагодите? — Да, многу ___ сакам.", en:"Do you like strawberries? — Yes, I love them.", o:["ги","го","ја","ме"], why:"plural → ги."},
+  {t:"mc", q:"Ивана, Марко ___ бара!", en:"Ivana, Marko is looking for you!", o:["те","ме","го","ве"], why:"тебе → те."},
+  {t:"mc", q:"Деца, баба Ружа ___ чека!", en:"Kids, Grandma Ruža is waiting for you!", o:["ве","те","ги","ме"], why:"вас (you, plural) → ве."},
+  {t:"mc", pic:"🍲", q:"Баба ___ вика на ручек.", en:"Grandma is calling us to lunch.", o:["нѐ","ги","ме","ве"], why:"нас → нѐ. It's written with an accent so it isn't confused with не = not."},
+  {t:"mc", q:"Кое е точно?", en:"Which is correct? (I'm reading the book.)", o:["Ја читам книгата.","Читам ја книгата.","Ја читам книга.","Го читам книгата."], why:"When the object has ‘the’ (книгата), Macedonian also puts ја before the verb."},
+  {t:"mc", q:"Кое е точно?", en:"Which is correct? (I know him.)", o:["Го познавам.","Познавам го.","Ја познавам.","Ги познавам."], why:"The short form goes before the verb: го познавам."},
+  {t:"match", q:"Долга и кратка форма.", en:"Match each long form to its short form.", p:[["мене","ме"],["тебе","те"],["него","го"],["неа","ја"],["нас","нѐ"],["вас","ве"]]},
+  {t:"order", en:"I'm looking for the keys.", w:["Ги","барам","клучевите."]}
+ ]},
+ { ch:4, mk:"Ми, ти, му, ѝ", en:"To me, to you, to him, to her", qs:[
+  {t:"mc", pic:"💐", q:"Ивана има роденден. ___ купувам цвеќе.", en:"It's Ivana's birthday. I'm buying her flowers.", o:["Ѝ","Му","Им","Ми"], why:"to her = ѝ, with an accent so it isn't confused with и = and."},
+  {t:"mc", pic:"👓", q:"Дедо Трајко не гледа добро. ___ читам весник.", en:"Grandpa Trajko can't see well. I read the newspaper to him.", o:["Му","Ѝ","Ни","Го"], why:"to him = му."},
+  {t:"mc", pic:"🥪", q:"Децата се гладни. ___ давам сендвичи.", en:"The children are hungry. I'm giving them sandwiches.", o:["Им","Ги","Му","Ви"], why:"to them = им. (ги = them, when nothing is given ‘to’ them.)"},
+  {t:"mc", pic:"🌊", q:"___ се допаѓа Охрид.", en:"I like Ohrid.", o:["Ми","Ме","Јас","Ние"], why:"Ми се допаѓа = I like (literally ‘it pleases me’)."},
+  {t:"mc", q:"Дали ___ се допаѓа македонската храна?", en:"Do you like Macedonian food? (to a friend)", o:["ти","те","ми","ви"], why:"to you = ти."},
+  {t:"mc", pic:"✉️", q:"Ние ___ пишуваме на баба секоја недела.", en:"We write to grandma every week.", o:["ѝ","ја","му","ги"], why:"на баба = to grandma, so ѝ."},
+  {t:"mc", pic:"🥶", q:"___ е ладно.", en:"I'm cold.", o:["Ми","Ме","Јас","Ние"], why:"Ми е ладно = I'm cold (literally ‘to me it's cold’)."},
+  {t:"match", q:"Долга и кратка форма.", en:"Match each long form to its short form.", p:[["мене","ми"],["тебе","ти"],["нему","му"],["нејзе","ѝ"],["нам","ни"],["вам","ви"]]},
+  {t:"order", en:"I like this song.", w:["Ми","се","допаѓа","оваа","песна."]}
+ ]},
+ { ch:4, mk:"Мој, твој, негов", en:"My, your, his", qs:[
+  {t:"mc", pic:"🐕", q:"Ова е ___ куче. (my)", en:"This is my dog.", o:["моето","мојот","мојата","моите"], why:"куче is neuter: моето."},
+  {t:"mc", q:"___ сестра живее во Велес. (my)", en:"My sister lives in Veles.", o:["Мојата","Мојот","Моето","Моите"], why:"сестра is feminine: мојата."},
+  {t:"mc", pic:"🔑", q:"Каде се ___ клучеви? (your)", en:"Where are your keys?", o:["твоите","твојот","твојата","твоето"], why:"клучеви is plural: твоите."},
+  {t:"mc", pic:"🚗", q:"Тоа е ___ автомобил. (his)", en:"That's his car.", o:["неговиот","нејзиниот","нивниот","нашиот"], why:"his = негов → неговиот."},
+  {t:"mc", pic:"🏡", q:"Ова е ___ куќа. (her)", en:"This is her house.", o:["нејзината","неговата","нејзиниот","нашата"], why:"her = нејзин; куќа is feminine → нејзината."},
+  {t:"mc", q:"___ град е мал, но убав. (our)", en:"Our town is small but beautiful.", o:["Нашиот","Нашата","Нашето","Нашите"], why:"град is masculine: нашиот."},
+  {t:"mc", q:"„мајка ми“ значи…", en:"What does ‘мајка ми’ mean?", o:["my mother","your mother","to my mother","her mother"], why:"With family words, the short form often comes after the noun: мајка ми, брат ти, сестра ѝ."},
+  {t:"mc", q:"„брат му“ значи…", en:"What does ‘брат му’ mean?", o:["his brother","my brother","her brother","their brother"], why:"му = his: брат му = his brother."},
+  {t:"sort", q:"Мојот, мојата или моето?", en:"My: masculine, feminine or neuter?", b:["мојот","мојата","моето"], i:[["телефон",0],["кола",1],["куче",2],["пријател",0],["книга",1],["палто",2]]}
+ ]},
+ { ch:5, mk:"Во градот", en:"Around town", qs:[
+  {t:"match", q:"Што има во градот?", en:"What's in town? Match the pictures.", p:[["болница","🏥"],["аптека","💊"],["пекара","🥐"],["банка","🏦"],["музеј","🏛️"],["семафор","🚦"]]},
+  {t:"mc", pic:"⬅️ 💊", q:"Аптеката е ___.", en:"The pharmacy is on the left.", o:["лево","десно","право","назад"], why:"лево = left, десно = right, право = straight on."},
+  {t:"mc", pic:"🏦 ➡️", q:"Банката е ___.", en:"The bank is on the right.", o:["десно","лево","право","назад"], why:"десно = right."},
+  {t:"mc", street:["🏦|банка","🥐|пекара","💊|аптека"], q:"Каде е пекарата?", en:"Where is the bakery?", o:["помеѓу банката и аптеката","зад банката","до мостот","на плоштадот"], why:"помеѓу = between (from Level 1)."},
+  {t:"mc", q:"Каде купуваме леб?", en:"Where do we buy bread?", o:["во пекарата","во аптеката","во банката","во музејот"], why:"пекара = bakery."},
+  {t:"mc", q:"Каде купуваме лекови?", en:"Where do we buy medicine? (лек = medicine)", o:["во аптеката","во пекарата","на плоштадот","во училиштето"], why:"аптека = pharmacy."},
+  {t:"tf", s:"muzej", q:"Музејот е до мостот.", en:"The museum is next to the bridge.", a:true, why:"Музејот е до мостот."},
+  {t:"tf", s:"muzej", q:"На крстосницата се оди десно.", en:"At the crossroads you go right.", a:false, why:"…а потоа лево: then left."},
+  {t:"tf", s:"muzej", q:"Музејот е далеку.", en:"The museum is far away.", a:false, why:"Близу е, пет минути пешки."},
+  {t:"order", en:"Is the museum far from here?", w:["Дали","музејот","е","далеку","од","тука?"]}
+ ]},
+ { ch:5, mk:"Професии", en:"Jobs", qs:[
+  {t:"match", q:"Кој што работи?", en:"Who does what? Match the pictures.", p:[["готвач","👨‍🍳"],["пожарникар","👨‍🚒"],["полицаец","👮"],["фризерка","💇‍♀️"],["учителка","👩‍🏫"],["земјоделец","👨‍🌾"]]},
+  {t:"mc", pic:"🏫", q:"Јована работи во училиште. Таа е ___.", en:"Jovana works at a school. She is a ___.", o:["учителка","учител","готвачка","возач"], why:"Many jobs add -ка for a woman: учител → учителка."},
+  {t:"mc", pic:"🚌", q:"Бојан ги вози луѓето со автобус. Тој е ___.", en:"Bojan drives people around by bus. He is a ___.", o:["возач","готвач","новинар","банкар"], why:"вози = drives → возач = driver."},
+  {t:"mc", pic:"🩺", q:"Каде работи лекарката?", en:"Where does the doctor (a woman) work?", o:["во болница","во пекара","во банка","на аеродром"], why:"лекар / лекарка = doctor."},
+  {t:"mc", pic:"📰", q:"Кој пишува за весник?", en:"Who writes for a newspaper?", o:["новинарот","фризерот","ветеринарот","столарот"], why:"новинар = journalist."},
+  {t:"mc", pic:"🐈", q:"Кој ги лекува животните?", en:"Who treats animals? (лекува = treats)", o:["ветеринарот","банкарот","возачот","пожарникарот"], why:"ветеринар = vet."},
+  {t:"mc", q:"Што работиш?", en:"What do you do for a living?", o:["Јас сум продавачка.","Јас сум од Кратово.","Јас сум добро.","Јас сум на одмор."], why:"Што работиш? asks about your job."},
+  {t:"sort", q:"Тој или таа?", en:"He or she?", b:["тој / he","таа / she"], i:[["учител",0],["учителка",1],["готвачка",1],["готвач",0],["продавач",0],["продавачка",1],["лекарка",1],["лекар",0]]},
+  {t:"order", en:"My brother is a firefighter.", w:["Мојот","брат","е","пожарникар."]}
+ ]},
+ { ch:5, mk:"Телото", en:"The body", qs:[
+  {t:"match", q:"Поврзи го делот од телото.", en:"Match each body part to its picture.", p:[["око","👁️"],["уво","👂"],["нос","👃"],["уста","👄"],["рака","✋"],["нога","🦵"]]},
+  {t:"mc", q:"уво → две ___", en:"Plural of уво (ear):", o:["уши","ува","увови","ушиња"], why:"уво → уши is irregular, like око → очи."},
+  {t:"mc", pic:"🦷", q:"Ме боли ___.", en:"My tooth hurts.", o:["забот","заб","забите","забта"], why:"заб is masculine: забот."},
+  {t:"mc", q:"Ме ___ ушите.", en:"My ears hurt.", o:["болат","боли","болам","болиш"], why:"ушите is plural, so болат. For one thing: боли."},
+  {t:"mc", pic:"🦵 🦵", q:"Ме болат ___.", en:"My legs hurt.", o:["нозете","ногата","нозе","ногите"], why:"нога → нозе, and with ‘the’: нозете."},
+  {t:"mc", pic:"👀", q:"Со што гледаме?", en:"What do we see with?", o:["со очите","со ушите","со носот","со рацете"], why:"очи = eyes."},
+  {t:"mc", pic:"🎧", q:"Со што слушаме?", en:"What do we hear with?", o:["со ушите","со очите","со устата","со нозете"], why:"уши = ears."},
+  {t:"mc", pic:"🩺", q:"Кај лекар: „Што ве боли?“", en:"At the doctor's: ‘What hurts?’", o:["Ме боли грлото.","Јас сум лекар.","Имам триесет години.","Се викам Бојан."], why:"грло = throat."},
+  {t:"sort", q:"Едно или две?", en:"Do we have one or two?", b:["едно / one","две / two"], i:[["нос",0],["уста",0],["глава",0],["стомак",0],["око",1],["уво",1],["рака",1],["нога",1]]},
+  {t:"order", en:"My head and my back hurt. (грб = back)", w:["Ме","болат","главата","и","грбот."]}
+ ]}
+];
+
+/* ---------- Levels ---------- */
+const LEVELS = [
+  { n: 1, cefr: "A1", chapters: CHAPTERS_1, stops: STOPS_1 },
+  { n: 2, cefr: "A2", chapters: CHAPTERS_2, stops: STOPS_2 },
+  { n: 3, cefr: "A2+", soon: true, topics: [
+    ["Минато време", "Past tenses"], ["Свршени и несвршени глаголи", "Perfective and imperfective verbs"],
+    ["Л-форма", "The л-form"], ["Заповеден начин", "Giving instructions"], ["Повратни глаголи со се", "Reflexive verbs with се"],
+    ["Би сакал / би сакала", "Would like"], ["Поголем, најголем", "Bigger, biggest"], ["Опис на луѓе", "Describing people"],
+    ["Цар Самоил", "Tsar Samoil (reading)"] ] }
+];
+LEVELS.forEach(L => (L.stops || []).forEach((s, i) => { s.n = i + 1; s.id = `${L.n}-${i + 1}`; }));
+
+/* ---------- Helpers ---------- */
+const KEY = "mk-suns-v2", LKEY = "mk-level";
+let progress = (() => {
+  try {
+    const cur = JSON.parse(localStorage.getItem(KEY));
+    if (cur) return cur;
+    const old = JSON.parse(localStorage.getItem("mk-level1-suns-v1")) || {};
+    const out = {}; for (const [k, v] of Object.entries(old)) out[`1-${k}`] = v; return out;
+  } catch (e) { return {}; }
+})();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} }
+let level = (() => { try { const v = +localStorage.getItem(LKEY); return LEVELS.some(L => L.n === v && !L.soon) ? v : 1; } catch (e) { return 1; } })();
+const LV = (n = level) => LEVELS.find(L => L.n === n);
+
+function h(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (k === "class") n.className = v;
+    else if (k === "html") n.innerHTML = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (v === true) n.setAttribute(k, "");
+    else if (v !== false && v != null) n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) { if (k == null || k === false) continue; n.append(k.nodeType ? k : document.createTextNode(String(k))); }
+  return n;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const pad = n => String(n).padStart(2, "0");
+const isPic = s => /\p{Extended_Pictographic}/u.test(s) && !/[\p{L}]/u.test(s);
+const split = s => { const p = s.split(" / "); return [p[0], p[1] || ""]; };
+
+const RAYS = (() => { let s = ""; for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; const p = (r, d) => [12 + r * Math.cos(a + d), 12 + r * Math.sin(a + d)].map(v => v.toFixed(2)).join(","); s += `<polygon points="${p(5.3,-0.34)} ${p(11.7,-0.2)} ${p(11.7,0.2)} ${p(5.3,0.34)}"/>`; } return s; })();
+const sunSvg = (on, size = 18, cls = "sun") => `<svg class="${cls} ${on ? "on" : ""}" width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true"><g>${RAYS}</g><circle cx="12" cy="12" r="4.4"/></svg>`;
+const sunsRow = (n, size = 16) => h("span", { class: "suns", role: "img", "aria-label": `${n} of 3 suns`, html: [0, 1, 2].map(i => sunSvg(i < n, size)).join("") });
+
+function clockSvg(t) {
+  const [H, M] = t.split(":").map(Number);
+  const rad = d => d * Math.PI / 180, ha = rad(((H % 12) + M / 60) * 30), ma = rad(M * 6);
+  let ticks = "";
+  for (let k = 0; k < 12; k++) { const a = rad(k * 30), r1 = k % 3 ? 40 : 35; ticks += `<line x1="${(50 + r1 * Math.sin(a)).toFixed(1)}" y1="${(50 - r1 * Math.cos(a)).toFixed(1)}" x2="${(50 + 44 * Math.sin(a)).toFixed(1)}" y2="${(50 - 44 * Math.cos(a)).toFixed(1)}"/>`; }
+  return `<svg class="clock" viewBox="0 0 100 100" role="img" aria-label="Clock"><circle class="face" cx="50" cy="50" r="47"/><g class="ticks">${ticks}</g>` +
+    `<line class="hh" x1="50" y1="50" x2="${(50 + 22 * Math.sin(ha)).toFixed(1)}" y2="${(50 - 22 * Math.cos(ha)).toFixed(1)}"/>` +
+    `<line class="mh" x1="50" y1="50" x2="${(50 + 34 * Math.sin(ma)).toFixed(1)}" y2="${(50 - 34 * Math.cos(ma)).toFixed(1)}"/><circle class="pin" cx="50" cy="50" r="3.2"/></svg>`;
+}
+function flagSvg() {
+  const c = "100,50";
+  const rays = [[`18,0`,`0,0`,`0,9`],[`89,0`,`111,0`],[`182,0`,`200,0`,`200,9`],[`200,40`,`200,60`],[`200,91`,`200,100`,`182,100`],[`111,100`,`89,100`],[`18,100`,`0,100`,`0,91`],[`0,60`,`0,40`]]
+    .map(p => `<polygon points="${c} ${p.join(" ")}"/>`).join("");
+  return `<svg class="flag" viewBox="0 0 200 100" role="img" aria-label="Flag"><rect width="200" height="100" fill="#D20000"/><g fill="#FFE600">${rays}</g><circle cx="100" cy="50" r="17" fill="#D20000"/><circle cx="100" cy="50" r="13.5" fill="#FFE600"/></svg>`;
+}
+function sceneSvg(kind) {
+  const table = `<g class="table"><rect x="96" y="84" width="128" height="10" rx="2"/><rect x="108" y="94" width="8" height="66"/><rect x="204" y="94" width="8" height="66"/></g>`;
+  const ball = (x, y, r = 13) => `<circle class="ball" cx="${x}" cy="${y}" r="${r}"/>`;
+  const box = (x, y, w, hh) => `<rect class="box" x="${x}" y="${y}" width="${w}" height="${hh}" rx="2"/>`;
+  const parts = {
+    na: table + ball(160, 71),
+    pod: table + ball(160, 147),
+    do: table + ball(262, 147),
+    nad: table + `<line class="cord" x1="160" y1="0" x2="160" y2="26"/><polygon class="lamp" points="138,50 182,50 172,26 148,26"/><circle class="bulb" cx="160" cy="54" r="5"/>`,
+    vo: `<rect class="box-back" x="118" y="92" width="84" height="10" rx="2"/>` + ball(160, 98) + box(112, 100, 96, 60) + `<line class="box-line" x1="112" y1="114" x2="208" y2="114"/>`,
+    zad: ball(207, 98, 17) + box(112, 96, 96, 64) + `<line class="box-line" x1="112" y1="110" x2="208" y2="110"/>`,
+    pomegju: box(52, 104, 76, 56) + box(192, 104, 76, 56) + ball(160, 147)
+  };
+  return `<svg class="scene" viewBox="0 0 320 172" role="img" aria-label="Picture"><line class="floor" x1="10" y1="160" x2="310" y2="160"/>${parts[kind]}</svg>`;
+}
+
+const I18N = { fr: {"Hi! I'm Marko. I'm from Skopje, but now I'm in Ohrid. My sister Ana is with me. We're on holiday and we're very happy!": "Salut ! Je suis Marko. Je suis de Skopje, mais maintenant je suis à Ohrid. Ma sœur Ana est avec moi. Nous sommes en vacances et nous sommes très heureux !", "What's in Elena's backpack? She has a book, a bottle of water, headphones and keys. She has no glasses and no money!": "Qu’y a-t-il dans le sac à dos d’Elena ? Elle a un livre, une bouteille d’eau, des écouteurs et des clés. Elle n’a pas de lunettes et pas d’argent !", "Ana gets up at six o'clock. She drinks tea with honey and eats bread with ajvar. At eight she goes to work by bus. For lunch she eats a salad with her colleagues. In the afternoon she walks her dog in the park. In the evening she cooks and watches a series. She goes to bed at ten.": "Ana se lève à six heures. Elle boit du thé au miel et mange du pain avec de l’ajvar. À huit heures, elle va au travail en bus. Le midi, elle mange une salade avec ses collègues. L’après-midi, elle promène son chien au parc. Le soir, elle cuisine et regarde une série. Elle se couche à dix heures.", "— Good afternoon! Do you have fresh tomatoes?\n— Yes, we do. How much would you like?\n— One kilo, please. How much is it?\n— Eighty denars.\n— Here you are. Do you also have peppers?\n— Unfortunately we don't.": "— Bonjour ! Vous avez des tomates fraîches ?\n— Oui. Combien en voulez-vous ?\n— Un kilo, s’il vous plaît. C’est combien ?\n— Quatre-vingts denars.\n— Voilà. Vous avez aussi des poivrons ?\n— Malheureusement, non.", "In September Grandpa Trajko's family has a lot of work. They have to pick the grapes before the rain starts. Grandpa Trajko can't work much, so Jovana and Bojan help him. Grandma Cveta cooks lunch for everyone. In the evening they all sit in the yard and drink homemade grape juice.": "En septembre, la famille de grand-père Trajko a beaucoup de travail. Ils doivent cueillir le raisin avant que la pluie commence. Grand-père Trajko ne peut pas beaucoup travailler, alors Jovana et Bojan l’aident. Grand-mère Cveta prépare le déjeuner pour tout le monde. Le soir, ils s’assoient tous dans la cour et boivent du jus de raisin fait maison.", "On Friday Marko and Ivana will travel to Mavrovo. The forecast says it will snow on Saturday, and on Sunday it will be sunny. On Saturday they will ski all day. In the evening they will sit by the fireplace and drink hot tea. On Sunday they will walk by the lake and go back to Skopje.": "Vendredi, Marko et Ivana partiront pour Mavrovo. La météo dit qu’il neigera samedi et que dimanche il fera beau. Samedi, ils skieront toute la journée. Le soir, ils s’assiéront près de la cheminée et boiront du thé chaud. Dimanche, ils se promèneront au bord du lac et rentreront à Skopje.", "— Excuse me, where is the museum?\n— You go straight to the crossroads, then left. The museum is next to the bridge.\n— Is it far?\n— No, it's close. Five minutes on foot.": "— Excusez-moi, où est le musée ?\n— Vous allez tout droit jusqu’au carrefour, puis à gauche. Le musée est à côté du pont.\n— C’est loin ?\n— Non, c’est tout près. Cinq minutes à pied.", "Elena arrives in the capital.": "Elena arrive dans la capitale.", "A weekend by the lake.": "Un week-end au bord du lac.", "Coffee on Širok Sokak with new friends.": "Un café rue Širok Sokak avec de nouveaux amis.", "A market full of colour and good food.": "Un marché plein de couleurs et de bonnes choses.", "A trip to the mountains and lunch at grandma's.": "Une excursion à la montagne et un déjeuner chez grand-mère.", "A big family dinner.": "Un grand dîner de famille.", "Alphabet": "L’alphabet", "How many letters does the Macedonian alphabet have?": "Combien de lettres l’alphabet macédonien a-t-il ?", "5 vowels (а, е, и, о, у) + 26 consonants = 31.": "5 voyelles (а, е, и, о, у) + 26 consonnes = 31.", "Which letter is NOT a vowel?": "Quelle lettre N’EST PAS une voyelle ?", "ј is a consonant. It sounds like y in ‘yes’.": "ј est une consonne. Elle se prononce comme le y de « yaourt ».", "Match each word to its picture.": "Associe chaque mot à son image.", "Which word has no vowel at all?": "Quel mot n’a aucune voyelle ?", "врв means ‘peak’. In Macedonian р can carry a syllable: врв, прст, крв.": "врв veut dire « sommet ». En macédonien, le р peut former une syllabe : врв, прст, крв.", "Which letter sounds like the j in ‘jungle’?": "Quelle lettre se prononce comme « dj » dans « djembé » ?", "џ = j in ‘jungle’. Careful: ј sounds like y in ‘yes’.": "џ = « dj » comme dans « djembé ». Attention : ј se prononce comme le y de « yaourt ».", "Which letter sounds like ny in ‘canyon’?": "Quelle lettre se prononce comme « gn » dans « montagne » ?", "њ is a soft n, like Spanish ñ. Its partner љ is a soft l.": "њ est un n mouillé, comme le « gn » français. Son partenaire љ est un l mouillé.", "Which letter is the soft k, like cu in ‘cute’?": "Quelle lettre est le k mouillé, un peu comme « tch » très doux ?", "ќ is a soft k (ќерка = daughter). ѓ is its soft g partner.": "ќ est un k mouillé (ќерка = fille). ѓ est son partenaire, le g mouillé.", "Which word contains the letter љ?": "Quel mot contient la lettre љ ?", "љубопитен means ‘curious’. лубеница (watermelon) has a plain л.": "љубопитен veut dire « curieux ». лубеница (pastèque) a un л normal.", "Greetings": "Salutations", "It's 8 a.m. Elena sees her neighbour. What does she say?": "Il est 8 h du matin. Elena voit son voisin. Que dit-elle ?", "Добро утро = Good morning.": "Добро утро = Bonjour (le matin).", "Elena is leaving the bakery. What does she say to the shop assistant?": "Elena sort de la boulangerie. Que dit-elle à la vendeuse ?", "Пријатно is the polite goodbye when you leave a place.": "Пријатно est l’au revoir poli quand on quitte un lieu.", "You're in class. How do you ask the new teacher his name?": "Tu es en cours. Comment demandes-tu son nom au nouveau professeur ?", "With a teacher, use the formal form: Како се викате?": "Avec un professeur, on vouvoie : Како се викате?", "Marko sneezes. What do you say to him?": "Marko éternue. Que lui dis-tu ?", "Наздравје means ‘bless you’, and also ‘cheers’ when you raise a glass.": "Наздравје veut dire « à tes souhaits », et aussi « santé ! » quand on trinque.", "Match each greeting to its translation.": "Associe chaque salutation à sa traduction.", "Good afternoon!": "Bon après-midi !", "Good night!": "Bonne nuit !", "See you!": "À bientôt !", "Thank you!": "Merci !", "Welcome!": "Bienvenue !", "Good evening, my name is Marko.": "Bonsoir, je m’appelle Marko.", "Grandma Ruža asks: ‘How are you?’ You're very well. What do you answer?": "Grand-mère Ruža demande : « Comment vas-tu ? » Tu vas très bien. Que réponds-tu ?", "Добро сум, фала! А ти? = I'm fine, thanks! And you?": "Добро сум, фала! А ти? = Je vais bien, merci ! Et toi ?", "Feelings & health": "Sentiments et santé", "Elena slept only three hours. She is…": "Elena n’a dormi que trois heures. Elle est…", "изморена = tired (a woman). A man says изморен.": "изморена = fatiguée (une femme). Un homme dit изморен.", "What is Marko saying?": "Que dit Marko ?", "Ме боли главата = My head hurts.": "Ме боли главата = J’ai mal à la tête.", "Marko wants pizza, burek and sarma. Right now! He is…": "Marko veut une pizza, un burek et des sarma. Tout de suite ! Il a…", "гладен = hungry (a man). A woman says гладна.": "гладен = qui a faim (un homme). Une femme dit гладна.", "How does a woman say ‘I am tired’?": "Comment une femme dit-elle « Je suis fatiguée » ?", "јас + сум, and the feminine ending -а.": "јас + сум, et la terminaison féminine -а.", "You're at a concert and the music is great. You are…": "Tu es à un concert et la musique est géniale. Tu es…", "среќна = happy (a woman); a man says среќен.": "среќна = heureuse (une femme) ; un homme dit среќен.", "Elena ate too much baklava. What does she say?": "Elena a mangé trop de baklava. Que dit-elle ?", "Ме боли стомакот = My stomach hurts.": "Ме боли стомакот = J’ai mal au ventre.", "Today I am hungry and tired. (a woman)": "Aujourd’hui j’ai faim et je suis fatiguée. (une femme)", "Days & months": "Jours et mois", "Today is Thursday. Tomorrow is…": "Aujourd’hui, c’est jeudi. Demain, c’est…", "четврток → петок (Thursday → Friday).": "четврток → петок (jeudi → vendredi).", "Today is Sunday. Tomorrow will be…": "Aujourd’hui, c’est dimanche. Demain, ce sera…", "After the weekend comes понеделник (Monday).": "Après le week-end vient понеделник (lundi).", "Put the days in order, starting with Monday.": "Remets les jours dans l’ordre, en commençant par lundi.", "Match each day to its translation.": "Associe chaque jour à sa traduction.", "Wednesday": "mercredi", "Thursday": "jeudi", "Saturday": "samedi", "Sunday": "dimanche", "Tuesday": "mardi", "Which month comes after March?": "Quel mois vient après mars ?", "март → април (March → April).": "март → април (mars → avril).", "In Macedonia, Christmas is celebrated on 7 …": "En Macédoine, Noël se fête le 7 …", "The Macedonian Orthodox Church follows the old calendar, so Christmas is on 7 January.": "L’Église orthodoxe macédonienne suit l’ancien calendrier, donc Noël est le 7 janvier.", "Winter or summer? Sort the months.": "Hiver ou été ? Classe les mois.", "winter": "hiver", "summer": "été", "Elena works Monday to Friday. When is she free?": "Elena travaille du lundi au vendredi. Quand est-elle libre ?", "сабота и недела = the weekend (викенд).": "сабота и недела = le week-end (викенд).", "Everyday words": "Mots de tous les jours", "What's on the table? Match the pictures.": "Qu’y a-t-il sur la table ? Associe les images.", "Odd one out: which word doesn't belong?": "L’intrus : quel mot n’a rien à faire ici ?", "град, село and центар are places. наочари are glasses.": "град, село et центар sont des lieux. наочари, ce sont des lunettes.", "Elena can't see well without her …": "Elena ne voit pas bien sans ses…", "наочари = glasses.": "наочари = lunettes.", "I listen to music with my …": "J’écoute de la musique avec mes…", "слушалки = headphones.": "слушалки = écouteurs.", "What does ‘наздравје’ mean?": "Que veut dire « наздравје » ?", "You say it after a sneeze, and when you clink glasses.": "On le dit après un éternuement, et quand on trinque.", "Bless you! / Cheers!": "À tes souhaits ! / Santé !", "A place or an object?": "Un lieu ou un objet ?", "place": "lieu", "object": "objet", "A ‘врв’ is the highest part of a…": "Un « врв », c’est le point le plus haut d’une…", "врв = peak. The cross on Vodno sits on a врв above Skopje.": "врв = sommet. La croix du Vodno se trouve sur un врв au-dessus de Skopje.", "mountain": "montagne", "city": "ville", "book": "livre", "bottle": "bouteille", "Tomorrow is a holiday, no work! Tomorrow is a…": "Demain c’est férié, pas de travail ! Demain, c’est un…", "слободен ден = day off.": "слободен ден = jour de congé.", "Numbers & age": "Nombres et âge", "How do you say 17?": "Comment dit-on 17 ?", "-наесет makes 11–19: седум + наесет.": "-наесет forme 11 à 19 : седум + наесет.", "Grandma Ruža is ‘седумдесет и осум’. Which number is it?": "Grand-mère Ruža a « седумдесет и осум » ans. Quel nombre est-ce ?", "The coffee costs ‘шеесет’ denars. How much is that?": "Le café coûte « шеесет » denars. Combien est-ce ?", "Choose the right ‘one’: ___ banana": "Choisis le bon « un » : ___ banane", "банана ends in -а, so it is feminine: една.": "банана se termine en -а, donc c’est féminin : една.", "Choose the right ‘one’: ___ village": "Choisis le bon « un » : ___ village", "село ends in -о, so it is neuter: едно.": "село se termine en -о, donc c’est neutre : едно.", "My grandmother is 78 years old.": "Ma grand-mère a 78 ans.", "What does ‘трети’ mean?": "Que veut dire « трети » ?", "први, втори, трети… = first, second, third…": "први, втори, трети… = premier, deuxième, troisième…", "third": "troisième", "three": "trois", "thirteen": "treize", "thirty": "trente", "Pronouns": "Les pronoms", "Replace ‘Elena’ with a pronoun.": "Remplace « Elena » par un pronom.", "Elena is a woman: таа (she).": "Elena est une femme : таа (elle).", "Replace ‘Marko and Ana’.": "Remplace « Marko et Ana ».", "Two other people: тие (they).": "Deux autres personnes : тие (ils).", "Replace ‘you and I’.": "Remplace « toi et moi ».", "You + me = ние (we).": "Toi + moi = ние (nous).", "Replace ‘the child’.": "Remplace « l’enfant ».", "дете is neuter, so тоа (it).": "дете est neutre, donc тоа.", "Replace ‘the city’. Careful!": "Remplace « la ville ». Attention !", "град ends in a consonant, so it is masculine: тој. Things have gender too.": "град se termine par une consonne, donc il est masculin : тој. Les choses ont aussi un genre.", "You're talking to your teacher. Which ‘you’?": "Tu parles à ta professeure. Quel « vous / tu » ?", "вие = formal ‘you’ (and plural ‘you’).": "вие = « vous » de politesse (et « vous » pluriel).", "Match each pronoun.": "Associe chaque pronom.", "I": "je", "you (a friend)": "tu (un ami)", "he": "il", "we": "nous", "they": "ils / elles", "you (formal)": "vous (politesse)", "The verb ‘to be’": "Le verbe « être »", "We are in Ohrid.": "Nous sommes à Ohrid.", "Elena is at a Macedonian class.": "Elena est en cours de macédonien.", "Are you from Bitola? (formal)": "Vous êtes de Bitola ? (politesse)", "Are you hungry? (to a friend)": "Tu as faim ? (à une amie)", "Marko is from Ohrid.": "Marko est d’Ohrid.", "Марко е од Скопје. He is only on holiday in Ohrid.": "Марко е од Скопје. Il est seulement en vacances à Ohrid.", "Ana is Marko's sister.": "Ana est la sœur de Marko.", "They are at work.": "Ils sont au travail.", "Ние сме на одмор: they are on holiday.": "Ние сме на одмор : ils sont en vacances.", "We are not at home.": "Nous ne sommes pas à la maison.", "Which sentence is correct?": "Quelle phrase est correcte ?", "To have, not to have": "Avoir, ne pas avoir", "I have two sisters.": "J’ai deux sœurs.", "They have three cats.": "Ils ont trois chats.", "Do you have a pen? (to a friend)": "Tu as un stylo ? (à un ami)", "We have no bread at home. We have to buy some!": "Nous n’avons pas de pain à la maison. Il faut en acheter !", "She has no time for lunch, she works all day.": "Elle n’a pas le temps de déjeuner, elle travaille toute la journée.", "тој / таа нема: like има, with не- in front.": "тој / таа нема : comme има, avec не- devant.", "Elena has a book.": "Elena a un livre.", "Elena has glasses.": "Elena a des lunettes.", "Elena doesn't have headphones.": "Elena n’a pas d’écouteurs.", "They don't have a car, but they have bicycles.": "Ils n’ont pas de voiture, mais ils ont des vélos.", "Colours": "Les couleurs", "What colour is this?": "Quelle est cette couleur ?", "црвена = red.": "црвена = rouge.", "кафеава = brown, like кафе (coffee).": "кафеава = marron, comme кафе (café).", "виолетова = purple / violet.": "виолетова = violet.", "The lemon is yellow.": "Le citron est jaune.", "лимон ends in a consonant (masculine): жолт.": "лимон se termine par une consonne (masculin) : жолт.", "The strawberries are red.": "Les fraises sont rouges.", "Plural noun, plural colour: црвени.": "Nom au pluriel, couleur au pluriel : црвени.", "The sea is blue.": "La mer est bleue.", "море ends in -е (neuter): плаво.": "море se termine en -е (neutre) : плаво.", "The flag of Macedonia is red and yellow.": "Le drapeau de la Macédoine est rouge et jaune.", "знаме is neuter, so жолто, like црвено.": "знаме est neutre, donc жолто, comme црвено.", "Which sentence has a mistake?": "Quelle phrase contient une erreur ?", "телефон is masculine: розов телефон.": "телефон est masculin : розов телефон.", "Match the words.": "Associe les mots.", "light": "clair", "dark": "foncé", "silver": "argenté", "golden": "doré", "grey": "gris", "A normal day": "Une journée ordinaire", "Ana gets up at seven.": "Ana se lève à sept heures.", "Ana goes to work by bus.": "Ana va au travail en bus.", "Ana eats pizza for lunch.": "Ana mange une pizza le midi.", "Ana has a dog.": "Ana a un chien.", "What does Ana drink in the morning?": "Que boit Ana le matin ?", "Пие чај со мед (tea with honey). сок = juice.": "Пие чај со мед (du thé au miel). сок = jus.", "Put Ana's day in order.": "Remets la journée d’Ana dans l’ordre.", "Match the meals and times of day.": "Associe les repas et les moments de la journée.", "breakfast": "petit-déjeuner", "lunch": "déjeuner", "dinner": "dîner", "afternoon": "après-midi", "in the evening": "le soir", "When do we eat ‘појадок’?": "Quand mange-t-on le « појадок » ?", "појадок = breakfast; наутро = in the morning.": "појадок = petit-déjeuner ; наутро = le matin.", "Food": "La nourriture", "At the market: fruit. Match the pictures.": "Au marché : les fruits. Associe les images.", "At the market: vegetables. Match the pictures.": "Au marché : les légumes. Associe les images.", "Sweet or savoury?": "Sucré ou salé ?", "sweet": "sucré", "savoury": "salé", "Tavče gravče is made from…": "Le tavče gravče est fait avec…", "грав = beans. Tavče gravče is beans baked in a clay pan.": "грав = haricots. Le tavče gravče, ce sont des haricots cuits au four dans un plat en terre.", "Ajvar is made from…": "L’ajvar est fait avec…", "Roasted red peppers (пиперки), often with eggplant.": "Des poivrons rouges grillés (пиперки), souvent avec de l’aubergine.", "Odd one out:": "L’intrus :", "морков (carrot) is a vegetable; the others are fruit.": "морков (carotte) est un légume ; les autres sont des fruits.", "The waiter asks: ‘What would you like for dessert?’ (ве молам = please)": "Le serveur demande : « Que voulez-vous comme dessert ? » (ве молам = s’il vous plaît)", "Баклава is the only dessert here.": "Баклава est le seul dessert ici.", "I want stuffed peppers and a salad.": "Je veux des poivrons farcis et une salade.", "Travelling": "En voyage", "Elena is looking for the bus station. What does she ask?": "Elena cherche la gare routière. Que demande-t-elle ?", "Каде се наоѓа…? = Where is…?": "Каде се наоѓа…? = Où se trouve… ?", "She wants to know the price of a ticket to Ohrid.": "Elle veut connaître le prix d’un billet pour Ohrid.", "Колку чини…? = How much is…?": "Колку чини…? = Combien coûte… ?", "She's at the station and isn't sure the bus goes to Struga.": "Elle est à la gare et ne sait pas si le bus va à Struga.", "Дали овој автобус оди до…? = Does this bus go to…?": "Дали овој автобус оди до…? = Est-ce que ce bus va à… ?", "A man says this. What does he mean?": "Un homme dit ceci. Qu’est-ce que ça veut dire ?", "близу = close; пешки = on foot.": "близу = près ; пешки = à pied.", "It's close, five minutes on foot.": "C’est tout près, à cinq minutes à pied.", "It's far, fifty minutes by bus.": "C’est loin, à cinquante minutes en bus.", "It's closed for five minutes.": "C’est fermé pendant cinq minutes.", "Take a taxi, it's far.": "Prends un taxi, c’est loin.", "The taxi driver says this. What does it mean?": "Le chauffeur de taxi dit ceci. Qu’est-ce que ça veut dire ?", "далеку = far.": "далеку = loin.", "The airport is far.": "L’aéroport est loin.", "The airport is close.": "L’aéroport est tout près.", "The airport is closed.": "L’aéroport est fermé.", "The airport is behind us.": "L’aéroport est derrière nous.", "How do I get to the lake?": "Comment aller au lac ?", "Match the travel words.": "Associe les mots du voyage.", "train station": "gare ferroviaire", "bus station": "gare routière", "ticket": "billet", "map": "carte (plan)", "the closest": "la plus proche", "You don't have a map. What do you ask at the hotel?": "Tu n’as pas de plan. Que demandes-tu à l’hôtel ?", "Може ли да добијам…? = Can I get…?": "Може ли да добијам…? = Est-ce que je peux avoir… ?", "Kitchen": "La cuisine", "Set the table: match the pictures.": "Mets la table : associe les images.", "What do we eat soup with?": "Avec quoi mange-t-on la soupe ?", "лажица = spoon.": "лажица = cuillère.", "Where do we put the milk to keep it cold?": "Où met-on le lait pour qu’il reste froid ?", "фрижидер = fridge.": "фрижидер = frigo.", "What do we cut a tomato with?": "Avec quoi coupe-t-on une tomate ?", "нож = knife.": "нож = couteau.", "шпорет, рерна and микро печка are appliances; виљушка is a fork.": "шпорет, рерна et микро печка sont des appareils ; виљушка est une fourchette.", "We drain the pasta in the…": "On égoutte les pâtes dans la…", "цедалка = colander.": "цедалка = passoire.", "For eating or for cooking?": "Pour manger ou pour cuisiner ?", "eating": "manger", "cooking": "cuisiner", "We wash the dishes in the…": "On lave la vaisselle dans l’…", "мијалник = sink.": "мијалник = évier.", "Prepositions": "Les prépositions", "Where is the ball?": "Où est le ballon ?", "на = on.": "на = sur.", "под = under.": "под = sous.", "до = next to.": "до = à côté de.", "Where is the lamp?": "Où est la lampe ?", "над = above.": "над = au-dessus de.", "во = in, inside.": "во = dans, à l’intérieur.", "зад = behind. The box hides part of the ball.": "зад = derrière. La boîte cache une partie du ballon.", "помеѓу = between.": "помеѓу = entre.", "I drink tea with honey.": "Je bois du thé avec du miel.", "со = with.": "со = avec.", "According to the forecast, it will rain tomorrow.": "Selon la météo, il pleuvra demain.", "според = according to.": "според = selon.", "Tonight we're at Grandma Ruža's.": "Ce soir, nous sommes chez grand-mère Ruža.", "кај = at someone's place.": "кај = chez quelqu’un.", "The light comes in through the window.": "La lumière entre par la fenêtre.", "низ = through.": "низ = à travers, par.", "Gender & plural": "Genre et pluriel", "Masculine, feminine or neuter?": "Masculin, féminin ou neutre ?", "masc.": "masc.", "fem.": "fém.", "neut.": "neutre", "Plural of мост (bridge):": "Pluriel de мост (pont) :", "One-syllable masculine nouns often add -ови.": "Les noms masculins d’une syllabe prennent souvent -ови.", "Plural of слој (layer):": "Pluriel de слој (couche) :", "After ј, ч, ш, џ the ending is -еви, and ј merges in: слој → слоеви.": "Après ј, ч, ш, џ la terminaison est -еви, et le ј disparaît : слој → слоеви.", "Plural of ќебе (blanket):": "Pluriel de ќебе (couverture) :", "Neuter nouns in -е often take -иња.": "Les noms neutres en -е prennent souvent -иња.", "Plural of езеро (lake):": "Pluriel de езеро (lac) :", "Neuter nouns in -о change to -а.": "Les noms neutres en -о changent en -а.", "There are many people in the park.": "Il y a beaucoup de gens dans le parc.", "човек → луѓе is irregular.": "човек → луѓе est irrégulier.", "I have two hands.": "J’ai deux mains.", "рака → раце is irregular.": "рака → раце est irrégulier.", "The cat has green eyes.": "Le chat a les yeux verts.", "око → очи is irregular.": "око → очи est irrégulier.", "Odd one out (by gender):": "L’intrus (selon le genre) :", "село is neuter; the others are feminine.": "село est neutre ; les autres sont féminins.", "Adjectives & ‘the’": "Adjectifs et « le / la »", "We have a small kitchen.": "Nous avons une petite cuisine.", "кујна is feminine: мала.": "кујна est féminin : мала.", "The coffee is hot.": "Le café est chaud.", "кафе is neuter: топло.": "кафе est neutre : топло.", "They are happy children.": "Ce sont des enfants heureux.", "Plural: среќни.": "Pluriel : среќни.", "How do you say ‘the backpack’?": "Comment dit-on « le sac à dos » ?", "Masculine nouns take -от.": "Les noms masculins prennent -от.", "How do you say ‘the plate’?": "Comment dit-on « l’assiette » ?", "Feminine nouns take -та.": "Les noms féminins prennent -та.", "How do you say ‘the big park’?": "Comment dit-on « le grand parc » ?", "The article moves onto the adjective: голем → големиот.": "L’article passe sur l’adjectif : голем → големиот.", "How do you say ‘the new café’? (кафуле is neuter)": "Comment dit-on « le nouveau café » ? (кафуле est neutre)", "I'm looking for a pharmacy. I have a headache!": "Je cherche une pharmacie. J’ai mal à la tête !", "Any pharmacy, not a specific one: no article.": "N’importe quelle pharmacie, pas une en particulier : pas d’article.", "The pharmacy is closed.": "La pharmacie est fermée.", "One specific pharmacy: аптека + та.": "Une pharmacie précise : аптека + та.", "The small dog is barking at the black cat.": "Le petit chien aboie après le chat noir.", "Family, time & verbs": "Famille, heure et verbes", "My mother's sister is my…": "La sœur de ma mère est ma…", "тетка = aunt (on either side).": "тетка = tante (des deux côtés).", "My mother's brother is my…": "Le frère de ma mère est mon…", "вујко = mother's brother; чичко = father's brother.": "вујко = frère de la mère ; чичко = frère du père.", "My uncle's daughter is my…": "La fille de mon oncle est ma…", "братучедка = female cousin.": "братучедка = cousine.", "My aunt's husband is my…": "Le mari de ma tante est mon…", "тетин = aunt's husband.": "тетин = mari de la tante.", "What time is it?": "Quelle heure est-il ?", "и пол = half past, so 9:30 = девет и пол.": "и пол = et demie, donc 9 h 30 = девет и пол.", "They are eating pizza.": "Ils mangent une pizza.", "We want ice cream.": "Nous voulons une glace.", "What would you like to drink? (formal)": "Que voulez-vous boire ? (politesse)", "Grandma, what are we eating for lunch?": "Grand-mère, qu’est-ce qu’on mange ce midi ?", "Elena has lots of questions.": "Elena a plein de questions.", "Everyday life by the Vardar river.": "La vie de tous les jours au bord du Vardar.", "Grape harvest: everyone has a job to do.": "Les vendanges : chacun a quelque chose à faire.", "Snow, sun and plans for the weekend.": "Neige, soleil et projets pour le week-end.", "Presents for everyone.": "Des cadeaux pour tout le monde.", "A small town full of life.": "Une petite ville pleine de vie.", "Question words": "Les mots interrogatifs", "Where do you live? — I live in Skopje.": "Où habites-tu ? — J’habite à Skopje.", "каде = where.": "каде = où.", "When does the film start? — At eight o'clock.": "Quand commence le film ? — À huit heures.", "кога = when.": "кога = quand.", "Why are you learning Macedonian? — Because it's a beautiful language.": "Pourquoi apprends-tu le macédonien ? — Parce que c’est une belle langue.", "зошто = why. The answer often starts with затоа што = because.": "зошто = pourquoi. La réponse commence souvent par затоа што = parce que.", "How much is the coffee? — Eighty denars.": "Combien coûte le café ? — Quatre-vingts denars.", "колку = how much / how many.": "колку = combien.", "What are you doing tonight? — I'm watching a film.": "Que fais-tu ce soir ? — Je regarde un film.", "што = what.": "што = quoi / que.", "How do you get to work? — By bus.": "Comment vas-tu au travail ? — En bus.", "како = how.": "како = comment.", "Match each question word.": "Associe chaque mot interrogatif.", "where": "où", "when": "quand", "why": "pourquoi", "how": "comment", "how much": "combien", "what": "quoi", "The answer is ‘I'm from Veles.’ What was the question?": "La réponse est « Je suis de Veles. » Quelle était la question ?", "Од каде си? = Where are you from?": "Од каде си? = D’où es-tu ?", "The answer is ‘I'm 25.’ What was the question?": "La réponse est « J’ai 25 ans. » Quelle était la question ?", "Колку години имаш? = How old are you?": "Колку години имаш? = Quel âge as-tu ?", "Where does your sister work?": "Où travaille ta sœur ?", "Which and whose": "Quel et à qui", "Which woman is your teacher?": "Quelle femme est ta professeure ?", "жена is feminine, so која.": "жена est féminin, donc која.", "Which child is crying?": "Quel enfant pleure ?", "дете is neuter, so кое.": "дете est neutre, donc кое.", "Which town do you live in?": "Dans quelle ville habites-tu ?", "град is masculine, so кој.": "град est masculin, donc кој.", "Which are your favourite films?": "Quels sont tes films préférés ?", "филмови is plural, so кои.": "филмови est au pluriel, donc кои.", "Whose phone is this?": "À qui est ce téléphone ?", "телефон is masculine: чиј, and овој.": "телефон est masculin : чиј, et овој.", "Whose coat is this?": "À qui est ce manteau ?", "палто is neuter: чие, and ова.": "палто est neutre : чие, et ова.", "Whose keys are these?": "À qui sont ces clés ?", "клучеви is plural: чии, and овие.": "клучеви est au pluriel : чии, et овие.", "This house is very old.": "Cette maison est très vieille.", "куќа is feminine: оваа. Masculine овој, neuter ова, plural овие.": "куќа est féminin : оваа. Masculin овој, neutre ова, pluriel овие.", "‘This’: masculine, feminine or neuter?": "« Ce / cette » : masculin, féminin ou neutre ?", "Yes/no questions": "Questions oui / non", "Make it a question: ‘You speak English.’": "Transforme en question : « Tu parles anglais. »", "Дали at the start turns a sentence into a yes/no question.": "Дали au début transforme une phrase en question oui / non.", "Which question is correct? (Do you want coffee?)": "Quelle question est correcte ? (Tu veux un café ?)", "ли comes right after the verb: Сакаш ли…?": "ли se place juste après le verbe : Сакаш ли…?", "It's a nice day today, isn't it?": "Il fait beau aujourd’hui, n’est-ce pas ?", "нели at the end = isn't it? / right?": "нели à la fin = n’est-ce pas ? / hein ?", "You're coming with us, right?": "Tu viens avec nous, hein ?", "нели asks the other person to confirm.": "нели demande à l’autre de confirmer.", "The seller has tomatoes.": "Le vendeur a des tomates.", "The tomatoes cost sixty denars.": "Les tomates coûtent soixante denars.", "Осумдесет денари: eighty.": "Осумдесет денари : quatre-vingts.", "The seller also has peppers.": "Le vendeur a aussi des poivrons.", "Немаме, за жал: unfortunately not.": "Немаме, за жал : malheureusement non.", "Are you ready? (to a woman)": "Tu es prête ? (à une femme)", "Your brother lives in Veles, right?": "Ton frère habite à Veles, n’est-ce pas ?", "а-group verbs": "Verbes du groupe en -а", "I read the newspaper every morning.": "Je lis le journal tous les matins.", "а-group: јас + -м → читам.": "Groupe en -а : јас + -м → читам.", "We listen to music in the car.": "Nous écoutons de la musique dans la voiture.", "They play football in the park.": "Ils jouent au foot dans le parc.", "тие + -ат → играат (two а's).": "тие + -ат → играат (deux а).", "You speak Macedonian very well!": "Vous parlez très bien macédonien !", "You are writing a letter to grandma.": "Tu écris une lettre à grand-mère.", "Ivana is waiting for the bus at the stop.": "Ivana attend le bus à l’arrêt.", "тој / таа: no ending → чека.": "тој / таа : pas de terminaison → чека.", "Match each person to the right form of гледа (watch).": "Associe chaque personne à la bonne forme de гледа (regarder).", "We go shopping on Saturday.": "Nous faisons les courses le samedi.", "е-group verbs": "Verbes du groupe en -е", "I drink tea with lemon.": "Je bois du thé au citron.", "пие → јас пијам: a ј comes in.": "пие → јас пијам : un ј apparaît.", "You sing very nicely!": "Tu chantes très bien !", "Where do you live? (plural or formal)": "Où habitez-vous ? (pluriel ou politesse)", "They eat kebapi with onion.": "Ils mangent des kebapi avec de l’oignon.", "е-group: тие → јадат, not јадеат.": "Groupe en -е : тие → јадат, et non јадеат.", "I don't know where the post office is.": "Je ne sais pas où est la poste.", "знае is a little irregular: јас знам.": "знае est un peu irrégulier : јас знам.", "We can come tomorrow.": "Nous pouvons venir demain.", "The children laugh at the joke.": "Les enfants rient de la blague.", "а-group or е-group?": "Groupe en -а ou groupe en -е ?", "а-group": "groupe -а", "е-group": "groupe -е", "Where do your parents live?": "Où habitent tes parents ?", "и-group verbs": "Verbes du groupe en -и", "I study Macedonian every day.": "J’étudie le macédonien tous les jours.", "и-group: јас + -ам → учам.": "Groupe en -и : јас + -ам → учам.", "What are you doing today?": "Que fais-tu aujourd’hui ?", "Bojan works in a hospital.": "Bojan travaille dans un hôpital.", "тој: no ending → работи.": "тој : pas de terminaison → работи.", "We walk to work.": "Nous allons au travail à pied.", "They are standing in front of the door.": "Ils sont debout devant la porte.", "стои gets a ј: јас стојам, тие стојат.": "стои prend un ј : јас стојам, тие стојат.", "Grandma Ruža thinks it will rain.": "Grand-mère Ruža pense qu’il va pleuvoir.", "таа: no ending → мисли.": "таа : pas de terminaison → мисли.", "You drive very fast!": "Vous conduisez très vite !", "Which group does each verb belong to?": "À quel groupe appartient chaque verbe ?", "а": "а", "е": "е", "и": "и", "Match each verb to its ‘јас’ (I) form.": "Associe chaque verbe à sa forme avec « јас » (je).", "Can, must, need": "Pouvoir, devoir, avoir besoin", "I can't come today, I'm ill. (a woman)": "Je ne peux pas venir aujourd’hui, je suis malade. (une femme)", "јас можам. After може comes да + verb.": "јас можам. Après може vient да + verbe.", "Tomorrow I have to get up early, I have an exam.": "Demain je dois me lever tôt, j’ai un examen.", "мора = must / have to: јас морам.": "мора = devoir : јас морам.", "We need to buy bread and milk.": "Nous devons acheter du pain et du lait.", "Треба да… = need to / should. треба never changes.": "Треба да… = il faut / on devrait. треба ne change jamais.", "I need an umbrella, it's raining!": "J’ai besoin d’un parapluie, il pleut !", "Ми треба = I need (literally ‘to me is needed’).": "Ми треба = j’ai besoin (mot à mot « il m’est nécessaire »).", "I want to go to the beach.": "Je veux aller à la plage.", "After сака, може, мора and треба the next verb comes with да.": "Après сака, може, мора et треба, le verbe suivant vient avec да.", "Can you help me?": "Tu peux m’aider ?", "Both verbs go with ти: можеш … да помогнеш.": "Les deux verbes vont avec ти : можеш … да помогнеш.", "They want to go to the cinema.": "Ils veulent aller au cinéma.", "тие сакаат да одат: both verbs in the тие form.": "тие сакаат да одат : les deux verbes à la forme тие.", "Can I have a glass of water?": "Est-ce que je peux avoir un verre d’eau ?", "We have to go home.": "Nous devons rentrer à la maison.", "Hobbies": "Les loisirs", "Match each hobby to its picture.": "Associe chaque loisir à son image.", "Ball sports: match the pictures.": "Sports de ballon : associe les images.", "Ivana likes to swim in the lake.": "Ivana aime nager dans le lac.", "таа сака да плива: the second verb also goes with таа.": "таа сака да плива : le deuxième verbe va aussi avec таа.", "What do you do in your free time?": "Que fais-tu pendant ton temps libre ?", "слободно време = free time.": "слободно време = temps libre.", "Which hobby happens on a mountain?": "Quel loisir se pratique en montagne ?", "планина = mountain, so планинарење = hiking.": "планина = montagne, donc планинарење = randonnée.", "With a ball or without one?": "Avec ou sans ballon ?", "with a ball": "avec ballon", "no ball": "sans ballon", "Marko plays football every Saturday.": "Marko joue au foot tous les samedis.", "тој игра. играње is the noun ‘playing’.": "тој игра. играње est le nom « le fait de jouer ».", "In my free time I like to read.": "Pendant mon temps libre, j’aime lire.", "Grape harvest (reading)": "Les vendanges (lecture)", "They pick the grapes in September.": "Ils cueillent le raisin en septembre.", "Во септември… They pick (собираат) the grapes.": "Во септември… Ils cueillent (собираат) le raisin.", "Grandpa Trajko works the most.": "Grand-père Trajko est celui qui travaille le plus.", "Grandma Cveta cooks lunch for everyone.": "Grand-mère Cveta prépare le déjeuner pour tout le monde.", "Why do they have to hurry? (брза = hurry)": "Pourquoi doivent-ils se dépêcher ? (брза = se dépêcher)", "…пред да почне дождот: before the rain starts.": "…пред да почне дождот : avant que la pluie commence.", "Who helps Grandpa Trajko?": "Qui aide grand-père Trajko ?", "What do they drink in the yard in the evening?": "Que boivent-ils dans la cour le soir ?", "домашен сок од грозје = homemade grape juice.": "домашен сок од грозје = jus de raisin fait maison.", "Words from the text: match them.": "Mots du texte : associe-les.", "grapes": "raisin", "yard": "cour", "rain": "pluie", "homemade": "fait maison", "helps": "aide", "picks": "cueille", "Grandma cooks lunch for everyone.": "Grand-mère prépare le déjeuner pour tout le monde.", "The weather": "La météo", "What's the weather like?": "Quel temps fait-il ?", "сонце = sun, so сончево = sunny.": "сонце = soleil, donc сончево = ensoleillé.", "дожд = rain; врне дожд = it's raining.": "дожд = pluie ; врне дожд = il pleut.", "снег = snow; вее снег = it's snowing.": "снег = neige ; вее снег = il neige.", "ветер = wind; дува = blows. You can also say: Ветровито е.": "ветер = vent ; дува = souffle. On peut aussi dire : Ветровито е.", "облак = cloud, so облачно = cloudy.": "облак = nuage, donc облачно = nuageux.", "35 degrees! It's very ___.": "35 degrés ! Il fait très ___.", "степени = degrees; топло = warm / hot.": "степени = degrés ; топло = chaud.", "It's very chilly today because it's cloudy.": "Il fait très frais aujourd’hui parce que le ciel est nuageux.", "затоа што (or бидејќи) = because.": "затоа што (ou бидејќи) = parce que.", "Match the weather words.": "Associe les mots de la météo.", "sun": "soleil", "cloud": "nuage", "snow": "neige", "wind": "vent", "cold": "froid", "Today the weather is sunny and warm.": "Aujourd’hui, il fait beau et chaud.", "The future with ќе": "Le futur avec ќе", "Tomorrow I will go to Mavrovo.": "Demain, j’irai à Mavrovo.", "ќе + the normal present form: ќе одам.": "ќе + la forme normale du présent : ќе одам.", "What will you do this weekend? (to a friend)": "Que feras-tu ce week-end ? (à un ami)", "ќе comes before the verb: ќе правиш.": "ќе se place avant le verbe : ќе правиш.", "We will go skiing in January.": "Nous irons skier en janvier.", "It will rain tomorrow.": "Il pleuvra demain.", "ќе врне = it will rain.": "ќе врне = il pleuvra.", "I won't come to the party, I'm working.": "Je ne viendrai pas à la fête, je travaille.", "‘Won't’ is нема да + verb, never „не ќе“.": "« Ne … pas » au futur, c’est нема да + verbe, jamais „не ќе“.", "They will stay three days at the hotel.": "Ils resteront trois jours à l’hôtel.", "ќе останат = they will stay.": "ќе останат = ils resteront.", "Now or later?": "Maintenant ou plus tard ?", "now": "maintenant", "later": "plus tard", "Tonight we will eat at a restaurant.": "Ce soir, nous mangerons au restaurant.", "Ivana won't work on Sunday.": "Ivana ne travaillera pas dimanche.", "A weekend in Mavrovo (reading)": "Un week-end à Mavrovo (lecture)", "Marko and Ivana will travel on Friday.": "Marko et Ivana partiront vendredi.", "It will be sunny on Saturday.": "Il fera beau samedi.", "Во сабота ќе вее снег. It will be sunny on Sunday.": "Во сабота ќе вее снег. Il fera beau dimanche.", "On Saturday they will ski all day.": "Samedi, ils skieront toute la journée.", "On Sunday they will stay at the hotel.": "Dimanche, ils resteront à l’hôtel.", "They will walk by the lake and go back to Skopje.": "Ils se promèneront au bord du lac et rentreront à Skopje.", "Where will they sit in the evening?": "Où s’assiéront-ils le soir ?", "покрај каминот = by the fireplace.": "покрај каминот = près de la cheminée.", "What will they drink in the evening?": "Que boiront-ils le soir ?", "топол чај = hot tea.": "топол чај = thé chaud.", "When will they go back to Skopje?": "Quand rentreront-ils à Skopje ?", "On Sunday it will be sunny.": "Dimanche, il fera beau.", "Him, her, them": "Le, la, les", "Where's the book? — I don't see it.": "Où est le livre ? — Je ne le vois pas.", "книга is feminine → ја.": "книга est féminin → ја.", "Where's the phone? — I have it in my bag.": "Où est le téléphone ? — Je l’ai dans mon sac.", "телефон is masculine → го.": "телефон est masculin → го.", "Do you like strawberries? — Yes, I love them.": "Tu aimes les fraises ? — Oui, je les adore.", "plural → ги.": "pluriel → ги.", "Ivana, Marko is looking for you!": "Ivana, Marko te cherche !", "Kids, Grandma Ruža is waiting for you!": "Les enfants, grand-mère Ruža vous attend !", "вас (you, plural) → ве.": "вас (vous, pluriel) → ве.", "Grandma is calling us to lunch.": "Grand-mère nous appelle pour le déjeuner.", "нас → нѐ. It's written with an accent so it isn't confused with не = not.": "нас → нѐ. Il s’écrit avec un accent pour ne pas le confondre avec не = ne … pas.", "Which is correct? (I'm reading the book.)": "Quelle phrase est correcte ? (Je lis le livre.)", "When the object has ‘the’ (книгата), Macedonian also puts ја before the verb.": "Quand le complément a « le / la » (книгата), le macédonien ajoute aussi ја devant le verbe.", "Which is correct? (I know him.)": "Quelle phrase est correcte ? (Je le connais.)", "The short form goes before the verb: го познавам.": "La forme courte se place devant le verbe : го познавам.", "Match each long form to its short form.": "Associe chaque forme longue à sa forme courte.", "I'm looking for the keys.": "Je cherche les clés.", "To me, to you, to him, to her": "À moi, à toi, à lui, à elle", "It's Ivana's birthday. I'm buying her flowers.": "C’est l’anniversaire d’Ivana. Je lui achète des fleurs.", "to her = ѝ, with an accent so it isn't confused with и = and.": "à elle = ѝ, avec un accent pour ne pas le confondre avec и = et.", "Grandpa Trajko can't see well. I read the newspaper to him.": "Grand-père Trajko ne voit pas bien. Je lui lis le journal.", "to him = му.": "à lui = му.", "The children are hungry. I'm giving them sandwiches.": "Les enfants ont faim. Je leur donne des sandwichs.", "to them = им. (ги = them, when nothing is given ‘to’ them.)": "à eux = им. (ги = les, quand on ne donne rien « à » quelqu’un.)", "I like Ohrid.": "J’aime Ohrid.", "Ми се допаѓа = I like (literally ‘it pleases me’).": "Ми се допаѓа = j’aime (mot à mot « ça me plaît »).", "Do you like Macedonian food? (to a friend)": "Tu aimes la cuisine macédonienne ? (à un ami)", "to you = ти.": "à toi = ти.", "We write to grandma every week.": "Nous écrivons à grand-mère toutes les semaines.", "на баба = to grandma, so ѝ.": "на баба = à grand-mère, donc ѝ.", "I'm cold.": "J’ai froid.", "Ми е ладно = I'm cold (literally ‘to me it's cold’).": "Ми е ладно = j’ai froid (mot à mot « il me fait froid »).", "I like this song.": "J’aime cette chanson.", "My, your, his": "Mon, ton, son", "This is my dog.": "C’est mon chien.", "куче is neuter: моето.": "куче est neutre : моето.", "My sister lives in Veles.": "Ma sœur habite à Veles.", "сестра is feminine: мојата.": "сестра est féminin : мојата.", "Where are your keys?": "Où sont tes clés ?", "клучеви is plural: твоите.": "клучеви est au pluriel : твоите.", "That's his car.": "C’est sa voiture (à lui).", "his = негов → неговиот.": "son (à lui) = негов → неговиот.", "This is her house.": "C’est sa maison (à elle).", "her = нејзин; куќа is feminine → нејзината.": "sa (à elle) = нејзин ; куќа est féminin → нејзината.", "Our town is small but beautiful.": "Notre ville est petite mais belle.", "град is masculine: нашиот.": "град est masculin : нашиот.", "What does ‘мајка ми’ mean?": "Que veut dire « мајка ми » ?", "With family words, the short form often comes after the noun: мајка ми, брат ти, сестра ѝ.": "Avec les mots de la famille, la forme courte se place souvent après le nom : мајка ми, брат ти, сестра ѝ.", "my mother": "ma mère", "your mother": "ta mère", "to my mother": "à ma mère", "her mother": "sa mère (à elle)", "What does ‘брат му’ mean?": "Que veut dire « брат му » ?", "му = his: брат му = his brother.": "му = son (à lui) : брат му = son frère.", "his brother": "son frère (à lui)", "my brother": "mon frère", "her brother": "son frère (à elle)", "their brother": "leur frère", "My: masculine, feminine or neuter?": "Mon : masculin, féminin ou neutre ?", "Around town": "En ville", "What's in town? Match the pictures.": "Qu’y a-t-il en ville ? Associe les images.", "The pharmacy is on the left.": "La pharmacie est à gauche.", "лево = left, десно = right, право = straight on.": "лево = à gauche, десно = à droite, право = tout droit.", "The bank is on the right.": "La banque est à droite.", "десно = right.": "десно = à droite.", "Where is the bakery?": "Où est la boulangerie ?", "помеѓу = between (from Level 1).": "помеѓу = entre (vu au niveau 1).", "Where do we buy bread?": "Où achète-t-on du pain ?", "пекара = bakery.": "пекара = boulangerie.", "Where do we buy medicine? (лек = medicine)": "Où achète-t-on des médicaments ? (лек = médicament)", "аптека = pharmacy.": "аптека = pharmacie.", "The museum is next to the bridge.": "Le musée est à côté du pont.", "At the crossroads you go right.": "Au carrefour, on tourne à droite.", "…а потоа лево: then left.": "…а потоа лево : puis à gauche.", "The museum is far away.": "Le musée est loin.", "Is the museum far from here?": "Le musée est-il loin d’ici ?", "Jobs": "Les métiers", "Who does what? Match the pictures.": "Qui fait quoi ? Associe les images.", "Jovana works at a school. She is a ___.": "Jovana travaille dans une école. Elle est ___.", "Many jobs add -ка for a woman: учител → учителка.": "Beaucoup de métiers prennent -ка au féminin : учител → учителка.", "Bojan drives people around by bus. He is a ___.": "Bojan conduit les gens en bus. Il est ___.", "вози = drives → возач = driver.": "вози = conduit → возач = chauffeur.", "Where does the doctor (a woman) work?": "Où travaille la médecin ?", "лекар / лекарка = doctor.": "лекар / лекарка = médecin.", "Who writes for a newspaper?": "Qui écrit pour un journal ?", "новинар = journalist.": "новинар = journaliste.", "Who treats animals? (лекува = treats)": "Qui soigne les animaux ? (лекува = soigne)", "ветеринар = vet.": "ветеринар = vétérinaire.", "What do you do for a living?": "Que fais-tu dans la vie ?", "Што работиш? asks about your job.": "Што работиш? demande quel est ton métier.", "He or she?": "Il ou elle ?", "she": "elle", "My brother is a firefighter.": "Mon frère est pompier.", "The body": "Le corps", "Match each body part to its picture.": "Associe chaque partie du corps à son image.", "Plural of уво (ear):": "Pluriel de уво (oreille) :", "уво → уши is irregular, like око → очи.": "уво → уши est irrégulier, comme око → очи.", "My tooth hurts.": "J’ai mal à la dent.", "заб is masculine: забот.": "заб est masculin : забот.", "My ears hurt.": "J’ai mal aux oreilles.", "ушите is plural, so болат. For one thing: боли.": "ушите est au pluriel, donc болат. Pour une seule chose : боли.", "My legs hurt.": "J’ai mal aux jambes.", "нога → нозе, and with ‘the’: нозете.": "нога → нозе, et avec « les » : нозете.", "What do we see with?": "Avec quoi voit-on ?", "очи = eyes.": "очи = yeux.", "What do we hear with?": "Avec quoi entend-on ?", "уши = ears.": "уши = oreilles.", "At the doctor's: ‘What hurts?’": "Chez le médecin : « Où avez-vous mal ? »", "грло = throat.": "грло = gorge.", "Do we have one or two?": "On en a un ou deux ?", "one": "un", "two": "deux", "My head and my back hurt. (грб = back)": "J’ai mal à la tête et au dos. (грб = dos)", "Past tenses": "Les temps du passé", "Perfective and imperfective verbs": "Verbes perfectifs et imperfectifs", "The л-form": "La forme en -л", "Giving instructions": "Donner des consignes", "Reflexive verbs with се": "Les verbes pronominaux avec се", "Would like": "J’aimerais…", "Bigger, biggest": "Plus grand, le plus grand", "Describing people": "Décrire les gens", "Tsar Samoil (reading)": "Le tsar Samuel (lecture)", "Choose": "Choisis", "Match": "Associe", "Build it": "Construis la phrase", "Sort": "Classe", "True or false?": "Vrai ou faux ?", "Correct!": "Exact !", "Well done!": "Bravo !", "Excellent!": "Excellent !", "Great!": "Super !", "Mixed round": "Partie mélangée", "Have another go!": "Essaie encore !", "Good start!": "Bon début !", "Very good!": "Très bien !", "Brilliant!": "Génial !", "soon": "bientôt", "Level": "Niveau", "Elena in Macedonia": "Elena en Macédoine", "Level 3 is on its way. Here's what it will cover:": "Le niveau 3 arrive bientôt. Voici ce qu’il contiendra :", "Sure? Tap again": "Sûr ? Touche encore", "Reset suns": "Effacer les soleils", "{a} towns, {b} stops, one for each lesson. Right answers earn suns.": "{a} villes, {b} étapes, une par leçon. Chaque bonne réponse rapporte des soleils.", "suns": "soleils", "Town": "Ville", "questions": "questions", "Stops": "Étapes", "Show translation": "Voir la traduction", "Hide translation": "Cacher la traduction", "Results": "Résultat", "Next": "Suivant", "Not quite.": "Pas tout à fait.", "Answer:": "Réponse :", "True": "Vrai", "False": "Faux", "Tap a word on the left, then its partner on the right.": "Touche un mot à gauche, puis son partenaire à droite.", "Mistakes:": "Erreurs :", "Check": "Vérifier", "Start over": "Recommencer", "Tap the words in order": "Touche les mots dans l’ordre", "Word {a} of {b}.": "Mot {a} sur {b}.", "Tap a basket.": "Touche un panier.", "the red words": "les mots en rouge", "All correct!": "Tout est juste !", "Play again": "Rejouer", "Next stop": "Étape suivante", "All stops": "Toutes les étapes", "New best for this stop.": "Nouveau record pour cette étape.", "To review": "À revoir"} };
+const LANGS = [["en", "EN", "English"], ["fr", "FR", "Français"]];
+let lang = (() => { try { const v = localStorage.getItem("mk-lang"); return LANGS.some(l => l[0] === v) ? v : "en"; } catch (e) { return "en"; } })();
+const T = (s, vars) => {
+  let out = (lang !== "en" && s && I18N[lang] && I18N[lang][s]) || s;
+  if (vars) for (const [k, v] of Object.entries(vars)) out = out.split(`{${k}}`).join(v);
+  return out;
+};
+const KIND = { mc: ["Избери", "Choose"], match: ["Поврзи", "Match"], order: ["Подреди", "Build it"], sort: ["Подели", "Sort"], tf: ["Точно или неточно?", "True or false?"] };
+const kindLabel = t => `${KIND[t][0]} · ${T(KIND[t][1])}`;
+const GOOD = [["Точно!", "Correct!"], ["Браво!", "Well done!"], ["Одлично!", "Excellent!"], ["Супер!", "Great!"]];
+const $view = document.getElementById("view");
+let round = null;
+
+/* ---------- Home ---------- */
+function renderHome() {
+  round = null;
+  const L = LV();
+  const tabs = h("div", { class: "levels", role: "tablist", "aria-label": "Нивоа · Levels" },
+    ...LEVELS.map(x => h("button", { class: "lvl" + (x.n === level ? " on" : ""), role: "tab", "aria-selected": x.n === level ? "true" : "false",
+      onclick: () => { level = x.n; if (!x.soon) { try { localStorage.setItem(LKEY, String(x.n)); } catch (e) {} } renderHome(); } },
+      h("span", { class: "lvl-mk" }, `Ниво ${x.n}`),
+      h("span", { class: "lvl-en" }, x.soon ? `наскоро · ${T("soon")}` : `${T("Level")} ${x.n} · ${x.cefr}`))));
+  const hero = h("section", { class: "hero" },
+    h("div", { class: "sun-wrap", "aria-hidden": "true", html: sunSvg(true, 220, "hero-sun") }),
+    h("p", { class: "eyebrow" }, `Македонски · Ниво ${L.n} · ${T("Level")} ${L.n} (${L.cefr})`),
+    h("h1", {}, "Елена во Македонија"),
+    h("p", { class: "hero-en" }, T("Elena in Macedonia")),
+    h("div", { class: "hero-controls" }, tabs,
+      h("div", { class: "langs", role: "group", "aria-label": "Превод · Translation" },
+        h("span", { class: "langs-label" }, "Превод"),
+        ...LANGS.map(([code, short, name]) => h("button", { class: "lang" + (code === lang ? " on" : ""), "aria-pressed": code === lang ? "true" : "false", "aria-label": name, title: name,
+          onclick: () => { lang = code; try { localStorage.setItem("mk-lang", code); } catch (e) {} renderHome(); } }, short)))));
+  if (L.soon) {
+    hero.append(h("p", { class: "lede" }, "Ниво 3 се подготвува. Еве што ќе има во него:",
+      h("span", { class: "en" }, T("Level 3 is on its way. Here's what it will cover:"))));
+    $view.replaceChildren(hero, h("section", { class: "soon" },
+      h("ul", { class: "soon-list" }, ...L.topics.map(([mk, en]) => h("li", {}, h("b", {}, mk), h("span", { class: "en" }, T(en)))))));
+    window.scrollTo(0, 0);
+    return;
+  }
+  const got = L.stops.reduce((a, s) => a + (progress[s.id] || 0), 0);
+  let armed = false;
+  const resetBtn = h("button", { class: "btn small", onclick: () => {
+    if (!armed) { armed = true; resetBtn.textContent = `Сигурно? Допри пак · ${T("Sure? Tap again")}`; return; }
+    progress = {}; save(); renderHome();
+  } }, `Избриши ги сонцата · ${T("Reset suns")}`);
+  hero.append(
+    h("p", { class: "lede" }, `${L.chapters.length} градови, ${L.stops.length} станици, по една за секоја лекција. Секој точен одговор носи сонце.`,
+      h("span", { class: "en" }, T("{a} towns, {b} stops, one for each lesson. Right answers earn suns.", { a: L.chapters.length, b: L.stops.length }))),
+    h("div", { class: "hero-row" },
+      h("div", { class: "tally", html: `${sunSvg(true, 22)}<span><b>${got}</b> / ${L.stops.length * 3} сонца · ${T("suns")}</span>` }),
+      h("button", { class: "btn primary", onclick: () => startRound("mix") }, `Мешана игра · ${T("Mixed round")} (10)`)));
+  $view.replaceChildren(hero,
+    ...L.chapters.map((c, ci) => h("section", { class: "chapter" },
+      h("div", { class: "ch-head" },
+        h("p", { class: "eyebrow" }, `Град ${ci + 1} · ${T("Town")} ${ci + 1}`),
+        h("h2", {}, c.city),
+        h("p", {}, c.mk, " ", h("span", { class: "en" }, T(c.en)))),
+      h("div", { class: "stops" }, ...L.stops.map((s, si) => [s, si]).filter(([s]) => s.ch === ci).map(([s, si]) =>
+        h("button", { class: "stop", onclick: () => startRound(si) },
+          h("span", { class: "stop-top" }, h("span", { class: "stop-num" }, `Станица ${pad(s.n)}`), sunsRow(progress[s.id] || 0)),
+          h("span", { class: "stop-mk" }, s.mk),
+          h("span", { class: "stop-en" }, T(s.en)),
+          h("span", { class: "stop-meta" }, `${s.qs.length} прашања · ${T("questions")}`))))
+    )),
+    h("div", { class: "reset" }, resetBtn)
+  );
+  window.scrollTo(0, 0);
+}
+
+/* ---------- Round ---------- */
+function startRound(which) {
+  let qs, mk, en;
+  const stops = LV().stops;
+  if (which === "mix") { qs = shuffle(stops.flatMap(s => s.qs)).slice(0, 10); mk = "Мешана игра"; en = "Mixed round"; }
+  else { const s = stops[which]; qs = shuffle(s.qs.slice()); mk = s.mk; en = s.en; }
+  round = { which, level, qs, i: 0, score: 0, missed: [], mk, en };
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const r = round, q = r.qs[r.i], n = r.qs.length;
+  const card = h("article", { class: "qcard" });
+  card.append(h("span", { class: "kind" }, kindLabel(q.t)));
+  if (q.s) card.append(storyBox(q.s));
+  const vis = visual(q); if (vis) card.append(vis);
+  card.append(h("div", { class: "prompt" },
+    h("p", { class: "q-mk" }, q.q || (q.t === "order" ? "Подреди ги зборовите." : "")),
+    h("p", { class: "q-en" }, q.t === "order" && !q.q ? `“${T(q.en)}”` : T(q.en))));
+  ({ mc: doMC, tf: doTF, match: doMatch, order: doOrder, sort: doSort })[q.t](card, q);
+  $view.replaceChildren(
+    h("div", { class: "playbar" },
+      h("button", { class: "btn ghost", onclick: renderHome }, `← Станици · ${T("Stops")}`),
+      h("div", { class: "title" }, r.mk, h("span", {}, T(r.en))),
+      h("span", { class: "count" }, `${r.i + 1} / ${n}`)),
+    h("div", { class: "track" }, h("div", { class: "fill", style: `width:${(r.i / n) * 100}%` })),
+    card
+  );
+  window.scrollTo(0, 0);
+}
+
+function storyBox(key) {
+  const s = STORIES[key];
+  const en = h("p", { class: "story-en", hidden: true }, T(s.en));
+  const btn = h("button", { class: "link", onclick: () => { en.hidden = !en.hidden; btn.textContent = en.hidden ? `Покажи превод · ${T("Show translation")}` : `Скриј превод · ${T("Hide translation")}`; } }, `Покажи превод · ${T("Show translation")}`);
+  return h("div", { class: "story" }, s.pic ? h("div", { class: "story-pic", "aria-hidden": "true" }, s.pic) : null, h("p", { class: "story-mk" }, s.mk), en, btn);
+}
+
+function visual(q) {
+  if (q.pic) return h("div", { class: "visual" }, h("div", { class: "pic", "aria-hidden": "true" }, q.pic));
+  if (q.swatch) return h("div", { class: "visual" }, h("div", { class: "swatch", style: `background:${q.swatch}`, role: "img", "aria-label": "Colour" }));
+  if (q.clock) return h("div", { class: "visual", html: clockSvg(q.clock) });
+  if (q.flag) return h("div", { class: "visual", html: flagSvg() });
+  if (q.scene) return h("div", { class: "visual", html: sceneSvg(q.scene) });
+  if (q.street) return h("div", { class: "visual" }, h("div", { class: "street", role: "img", "aria-label": "Street" },
+    ...q.street.map(x => { const [ic, lb] = x.split("|"); return h("div", { class: "bldg" }, h("span", { class: "bldg-ic", "aria-hidden": "true" }, ic), h("span", { class: "bldg-lb" }, lb)); })));
+  return null;
+}
+
+function finish(card, q, ok, answer) {
+  const r = round;
+  if (ok) r.score++; else r.missed.push({ q, answer });
+  const last = r.i === r.qs.length - 1;
+  const next = h("button", { class: "btn primary", onclick: () => { if (last) renderEnd(); else { r.i++; renderQuestion(); } } },
+    last ? `Резултат · ${T("Results")} →` : `Следно · ${T("Next")} →`);
+  const fb = h("div", { class: "feedback " + (ok ? "good" : "bad"), role: "status" },
+    h("p", { class: "fb-head" }, ok ? (g => `${g[0]} · ${T(g[1])}`)(GOOD[Math.floor(Math.random() * GOOD.length)]) : `Не баш. · ${T("Not quite.")}`),
+    !ok && answer ? h("p", {}, `Точен одговор · ${T("Answer:")} `, h("b", {}, answer)) : null,
+    q.why ? h("p", {}, T(q.why)) : null,
+    next);
+  card.append(fb);
+  next.focus({ preventScroll: true });
+  fb.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function doMC(card, q) {
+  const correct = q.o[0];
+  const opts = shuffle(q.o.slice());
+  const grid = h("div", { class: "opts" + (opts.some(o => T(o).length > 24) ? " long" : "") });
+  opts.forEach(o => grid.append(h("button", { class: "opt", "data-v": o, onclick: e => {
+    [...grid.children].forEach(b => { b.disabled = true; if (b.dataset.v === correct) b.classList.add("is-right"); });
+    if (o !== correct) e.currentTarget.classList.add("is-wrong");
+    finish(card, q, o === correct, T(correct));
+  } }, T(o))));
+  card.append(grid);
+}
+
+function doTF(card, q) {
+  const label = v => v ? `Точно · ${T("True")}` : `Неточно · ${T("False")}`;
+  const grid = h("div", { class: "tf" });
+  [true, false].forEach(v => grid.append(h("button", { class: "opt", onclick: e => {
+    [...grid.children].forEach((b, i) => { b.disabled = true; if ([true, false][i] === q.a) b.classList.add("is-right"); });
+    if (v !== q.a) e.currentTarget.classList.add("is-wrong");
+    finish(card, q, v === q.a, label(q.a));
+  } }, label(v))));
+  card.append(grid);
+}
+
+function doMatch(card, q) {
+  const L = shuffle(q.p.map((p, i) => ({ t: p[0], i }))), R = shuffle(q.p.map((p, i) => ({ t: p[1], i })));
+  let sel = { L: null, R: null }, mistakes = 0, done = 0;
+  const note = h("p", { class: "note" }, `Допри еден збор лево, па неговиот пар десно. · ${T("Tap a word on the left, then its partner on the right.")}`);
+  const mk = (item, side) => {
+    const b = h("button", { class: "mbtn" + (isPic(item.t) ? " pic" : ""), onclick: () => {
+      if (b.classList.contains("ok")) return;
+      const cur = sel[side]; if (cur) cur.el.classList.remove("sel");
+      sel[side] = cur && cur.el === b ? null : { el: b, i: item.i };
+      if (sel[side]) b.classList.add("sel");
+      if (sel.L && sel.R) {
+        const a = sel.L, c = sel.R; sel = { L: null, R: null };
+        a.el.classList.remove("sel"); c.el.classList.remove("sel");
+        if (a.i === c.i) {
+          a.el.classList.add("ok"); c.el.classList.add("ok"); a.el.disabled = c.el.disabled = true; done++;
+          if (done === q.p.length) finish(card, q, mistakes <= 1, mistakes <= 1 ? "" : q.p.map(p => `${p[0]} = ${T(p[1])}`).join(" · "));
+        } else {
+          mistakes++;
+          [a.el, c.el].forEach(x => { x.classList.remove("no"); void x.offsetWidth; x.classList.add("no"); setTimeout(() => x.classList.remove("no"), 500); });
+          note.textContent = `Грешки · ${T("Mistakes:")} ${mistakes}`;
+        }
+      }
+    } }, T(item.t));
+    return b;
+  };
+  card.append(h("div", { class: "match" }, h("div", { class: "mcol" }, L.map(x => mk(x, "L"))), h("div", { class: "mcol" }, R.map(x => mk(x, "R")))), note);
+}
+
+function doOrder(card, q) {
+  const tiles = q.w.map((t, i) => ({ t, i }));
+  let pool = shuffle(tiles.slice());
+  for (let k = 0; k < 6 && pool.every((x, i) => x.i === i); k++) shuffle(pool);
+  let line = [], checked = false;
+  const lineEl = h("div", { class: "line" }), poolEl = h("div", { class: "pool" });
+  const check = h("button", { class: "btn primary", disabled: true, onclick: () => {
+    checked = true;
+    const ans = line.map(x => x.t).join(" ");
+    const ok = [q.w.join(" "), ...(q.alt || [])].includes(ans);
+    lineEl.classList.add(ok ? "good" : "bad");
+    [...lineEl.querySelectorAll("button"), check, clear].forEach(b => b.disabled = true);
+    finish(card, q, ok, q.w.join(" "));
+  } }, `Провери · ${T("Check")}`);
+  const clear = h("button", { class: "btn", onclick: () => { pool = pool.concat(line); line = []; draw(); } }, `Почни одново · ${T("Start over")}`);
+  function draw() {
+    lineEl.replaceChildren(...(line.length ? line.map((x, k) => h("button", { class: "tile", onclick: () => { if (checked) return; line.splice(k, 1); pool.push(x); draw(); } }, x.t))
+      : [h("span", { class: "ph" }, `Допри ги зборовите по ред · ${T("Tap the words in order")}`)]));
+    poolEl.replaceChildren(...pool.map((x, k) => h("button", { class: "tile", onclick: () => { pool.splice(k, 1); line.push(x); draw(); } }, x.t)));
+    check.disabled = pool.length > 0;
+  }
+  draw();
+  card.append(lineEl, poolEl, h("div", { class: "row" }, check, clear));
+}
+
+function doSort(card, q) {
+  const items = shuffle(q.i.slice());
+  let k = 0, mistakes = 0, busy = false;
+  const now = h("div", { class: "now" });
+  const counter = h("p", { class: "note" });
+  const drops = q.b.map(() => h("div", { class: "drops" }));
+  const buckets = q.b.map((b, bi) => {
+    const [mkL, enL] = split(b);
+    return h("button", { class: "bucket", onclick: () => pick(bi) }, h("span", { class: "bh" }, mkL, h("span", {}, T(enL))), drops[bi]);
+  });
+  function show() {
+    if (k < items.length) { now.replaceChildren(h("span", { class: "chip-big" }, items[k][0])); counter.textContent = `Збор ${k + 1} од ${items.length} · ${T("Word {a} of {b}.", { a: k + 1, b: items.length })} Допри кошничка · ${T("Tap a basket.")}`; }
+    else now.replaceChildren();
+  }
+  function pick(bi) {
+    if (busy || k >= items.length) return;
+    busy = true;
+    const [word, right] = items[k], ok = bi === right;
+    if (!ok) mistakes++;
+    const b = buckets[bi];
+    b.classList.add(ok ? "flash-ok" : "flash-no");
+    drops[right].append(h("span", { class: "drop" + (ok ? "" : " wrong") }, word));
+    setTimeout(() => {
+      b.classList.remove("flash-ok", "flash-no"); k++; busy = false; show();
+      if (k === items.length) {
+        buckets.forEach(x => x.disabled = true);
+        counter.textContent = mistakes ? `Грешки · ${T("Mistakes:")} ${mistakes} (црвените зборови · ${T("the red words")})` : `Сите се точни! · ${T("All correct!")}`;
+        finish(card, q, mistakes <= 1, mistakes <= 1 ? "" : q.b.map((bb, bi2) => `${split(bb)[0]}: ${q.i.filter(x => x[1] === bi2).map(x => x[0]).join(", ")}`).join(" · "));
+      }
+    }, 420);
+  }
+  show();
+  card.append(now, counter, h("div", { class: "buckets" }, buckets));
+}
+
+/* ---------- End ---------- */
+function renderEnd() {
+  const r = round, n = r.qs.length, pct = r.score / n;
+  const suns = pct >= 0.9 ? 3 : pct >= 0.7 ? 2 : pct >= 0.5 ? 1 : 0;
+  let improved = false;
+  const stops = LV(r.level).stops;
+  if (r.which !== "mix") { const id = stops[r.which].id; if ((progress[id] || 0) < suns) { progress[id] = suns; save(); improved = true; } }
+  const msg = [["Обиди се повторно!", "Have another go!"], ["Добар почеток!", "Good start!"], ["Многу добро!", "Very good!"], ["Браво!", "Brilliant!"]][suns];
+  const actions = [h("button", { class: "btn primary", onclick: () => startRound(r.which) }, `Повторно · ${T("Play again")}`)];
+  if (r.which !== "mix" && r.which < stops.length - 1) actions.push(h("button", { class: "btn", onclick: () => startRound(r.which + 1) }, `Следна станица · ${T("Next stop")} →`));
+  actions.push(h("button", { class: "btn", onclick: renderHome }, `Сите станици · ${T("All stops")}`));
+  $view.replaceChildren(
+    h("div", { class: "playbar" }, h("button", { class: "btn ghost", onclick: renderHome }, `← Станици · ${T("Stops")}`), h("div", { class: "title" }, r.mk, h("span", {}, T(r.en)))),
+    h("div", { class: "track" }, h("div", { class: "fill", style: "width:100%" })),
+    h("article", { class: "qcard" },
+      h("div", { class: "result" },
+        sunsRow(suns, 46),
+        h("div", { class: "big-score" }, `${r.score} / ${n}`),
+        h("h2", {}, msg[0]),
+        h("p", { class: "en", style: "margin:0" }, T(msg[1]) + (improved ? " " + T("New best for this stop.") : ""))),
+      r.missed.length ? h("div", { class: "missed" },
+        h("h3", {}, `За повторување · ${T("To review")}`),
+        ...r.missed.map(m => h("div", { class: "miss" },
+          h("p", {}, m.q.q || T(m.q.en)),
+          m.q.q ? h("p", { class: "en" }, T(m.q.en)) : null,
+          h("p", { class: "ans" }, m.answer || "")))) : null,
+      h("div", { class: "end-actions" }, actions))
+  );
+  window.scrollTo(0, 0);
+}
+
+renderHome();
+</script>
+
+</body></html>
