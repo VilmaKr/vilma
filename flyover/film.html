@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flyover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500&family=Instrument+Serif:ital@1&display=block" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: #f6f8f8; }
+  #stage { position: relative; width: 1440px; height: 1152px; overflow: hidden; }
+  canvas { display: block; width: 1440px; height: 1152px; }
+  #ov { position: absolute; inset: 0; pointer-events: none; }
+  .badge { position: absolute; top: 44px; left: 50%; display: flex; align-items: center; gap: 10px;
+    padding: 9px 20px 9px 10px; background: #fff; border-radius: 999px; font: 500 21px/1 'Geist', sans-serif;
+    color: #14161b; box-shadow: 0 6px 18px rgba(26,33,51,.08), 0 1px 2px rgba(26,33,51,.06); white-space: nowrap; }
+  .badge img { width: 30px; height: 30px; border-radius: 8px; }
+  .line { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; }
+  .l1 { top: 98px; font: 500 74px/1 'Geist', sans-serif; letter-spacing: -0.035em; color: #14161b; }
+  .l2 { top: 178px; font: italic 400 82px/1 'Instrument Serif', serif; letter-spacing: -0.01em; color: #8b8b92; }
+  .w { display: inline-block; will-change: transform, filter, opacity; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1440" height="1152"></canvas>
+  <div id="ov">
+    <div class="badge" id="badge"><img src="assets/logo.png" alt=""><span id="brand"></span></div>
+    <div class="line l1" id="l1"></div>
+    <div class="line l2" id="l2"></div>
+  </div>
+</div>
+<script src="film.js"></script>
+</body>
+</html>
